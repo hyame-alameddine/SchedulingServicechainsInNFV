@@ -1,0 +1,568 @@
+Pricing for Service:    8 
+	 Parameters:
+		 Service Info BASED ON MASTER HEURISTIC INPUT:
+ 	Service Id:    8;
+	 Middlebox Nb:    4 
+	 Bandwidth:  327 
+	 Deadline:  216
+	 Traffic size:  676 
+	 Completion Time:  106
+	 Arrival Time: 0.156205
+	 Departure Time: 0.374784
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    8; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   94
+			 Is Processing at time slots :
+		Service Id :    8; MiddleBox Id:    1; Type:    3; Processing time:    5;Mapped to VNF id:    3;
+			 Started Processing at time slot   94
+			 Is Processing at time slots :  94  95  96  97  98
+		Service Id :    8; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   99
+			 Is Processing at time slots :  99 100 101 102
+		Service Id :    8; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  106
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    8; VLink Id :    0; Continious Id:   24;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    8; VLink Id :    1; Continious Id:   25;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    8; VLink Id :    2; Continious Id:   26;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  103
+			 Is transmiting at time slots : 103 104 105
+		--GRAPH--
+   0 1 2 3 
+-----------
+0| {0, 0, 1, 0, },
+
+1| {1, 0, 0, 0, },
+
+2| {0, 1, 0, 1, },
+
+3| {0, 1, 0, 0, },
+
+		--PHYSICAL LINK CAPACITY--
+   0 1 2 3 
+-----------
+0| {0, 0, 500, 0, },
+
+1| {500, 0, 0, 0, },
+
+2| {0, 500, 0, 500, },
+
+3| {0, 500, 0, 0, },
+
+		--VNF TYPES--
+0  1  2  3  4  
+-----------
+0, 1, 3, 3, 4, 
+
+		--VNF MAPPING TO PHYSICAL SERVERS--
+   0 1 2 3 
+-----------
+0| {0, 0, 0, 1, },
+
+1| {0, 1, 0, 0, },
+
+2| {0, 0, 1, 0, },
+
+3| {0, 0, 0, 1, },
+
+4| {0, 1, 0, 0, },
+
+	 alpha = 0.4675561864245051
+	 phi = 0.004410907419099105
+		--BETA [f][delta]--
+   		beta[4][6]=-36.182714 
+
+
+		--GAMMA [l][delta]--
+   		gamma[3][1]=-0.001268 
+		gamma[3][11]=-0.001268 
+		gamma[4][10]=-0.001268 
+
+
+	 RESULTS
+		 RC = 0.405803
+		--y[n][F][DELTA]--
+   		y[0][0][0]=1.0
+		y[1][3][0]=1.0
+		y[2][3][5]=1.0
+		y[3][1][14]=1.0
+
+
+		--z[n][F][DELTA]--
+   		z[1][3][0]=1.0
+		z[1][3][1]=1.0
+		z[1][3][2]=1.0
+		z[1][3][3]=1.0
+		z[1][3][4]=1.0
+		z[2][3][5]=1.0
+		z[2][3][6]=1.0
+		z[2][3][7]=1.0
+		z[2][3][8]=1.0
+
+
+		--q[n][ks]--
+   		q[0][3]=1.0
+		q[1][3]=1.0
+		q[2][3]=1.0
+		q[3][1]=1.0
+
+
+		--h[n][ks]--
+   		h[0][3]=1.0
+		h[1][3]=1.0
+
+
+		--theta[DELTA][E]--
+   		theta[11][2]=1.0
+
+
+		--thetaHat[DELTA][E]--
+   		thetaHat[11][2]=1.0
+		thetaHat[12][2]=1.0
+		thetaHat[13][2]=1.0
+
+
+		--l[ks][ks][E]--
+   		l[0][1][2]=1.0
+		l[1][2][2]=1.0
+		l[2][0][2]=1.0
+		l[3][1][2]=1.0
+
+
+		--g[ks][ks][DELTA][E]--
+   		g[0][1][11][2] =1.0
+		g[0][1][12][2] =1.0
+		g[0][1][13][2] =1.0
+		g[1][2][11][2] =1.0
+		g[1][2][12][2] =1.0
+		g[1][2][13][2] =1.0
+		g[2][0][11][2] =1.0
+		g[2][0][12][2] =1.0
+		g[2][0][13][2] =1.0
+		g[3][1][11][2] =1.0
+		g[3][1][12][2] =1.0
+		g[3][1][13][2] =1.0
+
+
+		 --v---
+ 		 v =14.0
+
+		--r[F][DELTA]--
+   		r[3][0]=1.0
+		r[3][1]=1.0
+		r[3][2]=1.0
+		r[3][3]=1.0
+		r[3][4]=1.0
+		r[3][5]=1.0
+		r[3][6]=1.0
+		r[3][7]=1.0
+		r[3][8]=1.0
+
+
+		--o[ks][ks][DELTA]--
+   		o[0][2][11]=327.0
+		o[0][2][12]=327.0
+		o[0][2][13]=327.0
+		o[1][0][11]=327.0
+		o[1][0][12]=327.0
+		o[1][0][13]=327.0
+		o[2][1][11]=327.0
+		o[2][1][12]=327.0
+		o[2][1][13]=327.0
+		o[3][1][11]=327.0
+		o[3][1][12]=327.0
+		o[3][1][13]=327.0
+
+
+Column Id:  536;
+			 Column Per Service ID (used to know if column was selected):    0;
+			 Service ID:    8;
+			 Completion time v:   14;
+			 VNF f used at time slot delta r[f][delta]:
+				 r[3][0]:    1;
+				 r[3][1]:    1;
+				 r[3][2]:    1;
+				 r[3][3]:    1;
+				 r[3][4]:    1;
+				 r[3][5]:    1;
+				 r[3][6]:    1;
+				 r[3][7]:    1;
+				 r[3][8]:    1;
+			 Link l used at time slot delta o[l][delta]:
+				 o[0][11]:  327;
+				 o[0][12]:  327;
+				 o[0][13]:  327;
+				 o[1][11]:  327;
+				 o[1][12]:  327;
+				 o[1][13]:  327;
+				 o[2][11]:  327;
+				 o[2][12]:  327;
+				 o[2][13]:  327;
+				 o[4][11]:  327;
+				 o[4][12]:  327;
+				 o[4][13]:  327;
+Pricing for Service:    8 
+	 Parameters:
+		 Service Info BASED ON MASTER HEURISTIC INPUT:
+ 	Service Id:    8;
+	 Middlebox Nb:    4 
+	 Bandwidth:  327 
+	 Deadline:  216
+	 Traffic size:  676 
+	 Completion Time:  106
+	 Arrival Time: 0.156205
+	 Departure Time: 0.374784
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    8; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   94
+			 Is Processing at time slots :
+		Service Id :    8; MiddleBox Id:    1; Type:    3; Processing time:    5;Mapped to VNF id:    3;
+			 Started Processing at time slot   94
+			 Is Processing at time slots :  94  95  96  97  98
+		Service Id :    8; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   99
+			 Is Processing at time slots :  99 100 101 102
+		Service Id :    8; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  106
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    8; VLink Id :    0; Continious Id:   24;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    8; VLink Id :    1; Continious Id:   25;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    8; VLink Id :    2; Continious Id:   26;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  103
+			 Is transmiting at time slots : 103 104 105
+		--GRAPH--
+   0 1 2 3 
+-----------
+0| {0, 0, 1, 0, },
+
+1| {1, 0, 0, 0, },
+
+2| {0, 1, 0, 1, },
+
+3| {0, 1, 0, 0, },
+
+		--PHYSICAL LINK CAPACITY--
+   0 1 2 3 
+-----------
+0| {0, 0, 500, 0, },
+
+1| {500, 0, 0, 0, },
+
+2| {0, 500, 0, 500, },
+
+3| {0, 500, 0, 0, },
+
+		--VNF TYPES--
+0  1  2  3  4  
+-----------
+0, 1, 3, 3, 4, 
+
+		--VNF MAPPING TO PHYSICAL SERVERS--
+   0 1 2 3 
+-----------
+0| {0, 0, 0, 1, },
+
+1| {0, 1, 0, 0, },
+
+2| {0, 0, 1, 0, },
+
+3| {0, 0, 0, 1, },
+
+4| {0, 1, 0, 0, },
+
+	 alpha = 0.0
+	 phi = 0.0
+		--BETA [f][delta]--
+   
+
+		--GAMMA [l][delta]--
+   
+
+	 RESULTS
+		 RC = 0.000000
+		--y[n][F][DELTA]--
+   		y[0][0][0]=1.0
+		y[1][3][38]=1.0
+		y[2][3][67]=1.0
+		y[3][1][131]=1.0
+
+
+		--z[n][F][DELTA]--
+   		z[1][3][38]=1.0
+		z[1][3][39]=1.0
+		z[1][3][40]=1.0
+		z[1][3][41]=1.0
+		z[1][3][42]=1.0
+		z[2][3][67]=1.0
+		z[2][3][68]=1.0
+		z[2][3][69]=1.0
+		z[2][3][70]=1.0
+
+
+		--q[n][ks]--
+   		q[0][3]=1.0
+		q[1][3]=1.0
+		q[2][3]=1.0
+		q[3][1]=1.0
+
+
+		--h[n][ks]--
+   		h[0][3]=1.0
+		h[1][3]=1.0
+
+
+		--theta[DELTA][E]--
+   		theta[108][2]=1.0
+
+
+		--thetaHat[DELTA][E]--
+   		thetaHat[108][2]=1.0
+		thetaHat[109][2]=1.0
+		thetaHat[110][2]=1.0
+
+
+		--l[ks][ks][E]--
+   		l[3][1][2]=1.0
+
+
+		--g[ks][ks][DELTA][E]--
+   		g[3][1][108][2] =1.0
+		g[3][1][109][2] =1.0
+		g[3][1][110][2] =1.0
+
+
+		 --v---
+ 		 v =131.0
+
+		--r[F][DELTA]--
+   		r[3][38]=1.0
+		r[3][39]=1.0
+		r[3][40]=1.0
+		r[3][41]=1.0
+		r[3][42]=1.0
+		r[3][67]=1.0
+		r[3][68]=1.0
+		r[3][69]=1.0
+		r[3][70]=1.0
+
+
+		--o[ks][ks][DELTA]--
+   		o[3][1][108]=327.0
+		o[3][1][109]=327.0
+		o[3][1][110]=327.0
+
+
+Column Id: 1250;
+			 Column Per Service ID (used to know if column was selected):    0;
+			 Service ID:    8;
+			 Completion time v:  131;
+			 VNF f used at time slot delta r[f][delta]:
+				 r[3][38]:    1;
+				 r[3][39]:    1;
+				 r[3][40]:    1;
+				 r[3][41]:    1;
+				 r[3][42]:    1;
+				 r[3][67]:    1;
+				 r[3][68]:    1;
+				 r[3][69]:    1;
+				 r[3][70]:    1;
+			 Link l used at time slot delta o[l][delta]:
+				 o[4][108]:  327;
+				 o[4][109]:  327;
+				 o[4][110]:  327;
+Pricing for Service:    8 
+	 Parameters:
+		 Service Info BASED ON MASTER HEURISTIC INPUT:
+ 	Service Id:    8;
+	 Middlebox Nb:    4 
+	 Bandwidth:  327 
+	 Deadline:  216
+	 Traffic size:  676 
+	 Completion Time:  106
+	 Arrival Time: 0.156205
+	 Departure Time: 0.374784
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    8; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   94
+			 Is Processing at time slots :
+		Service Id :    8; MiddleBox Id:    1; Type:    3; Processing time:    5;Mapped to VNF id:    3;
+			 Started Processing at time slot   94
+			 Is Processing at time slots :  94  95  96  97  98
+		Service Id :    8; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   99
+			 Is Processing at time slots :  99 100 101 102
+		Service Id :    8; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  106
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    8; VLink Id :    0; Continious Id:   24;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    8; VLink Id :    1; Continious Id:   25;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    8; VLink Id :    2; Continious Id:   26;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  103
+			 Is transmiting at time slots : 103 104 105
+		--GRAPH--
+   0 1 2 3 
+-----------
+0| {0, 0, 1, 0, },
+
+1| {1, 0, 0, 0, },
+
+2| {0, 1, 0, 1, },
+
+3| {0, 1, 0, 0, },
+
+		--PHYSICAL LINK CAPACITY--
+   0 1 2 3 
+-----------
+0| {0, 0, 500, 0, },
+
+1| {500, 0, 0, 0, },
+
+2| {0, 500, 0, 500, },
+
+3| {0, 500, 0, 0, },
+
+		--VNF TYPES--
+0  1  2  3  4  
+-----------
+0, 1, 3, 3, 4, 
+
+		--VNF MAPPING TO PHYSICAL SERVERS--
+   0 1 2 3 
+-----------
+0| {0, 0, 0, 1, },
+
+1| {0, 1, 0, 0, },
+
+2| {0, 0, 1, 0, },
+
+3| {0, 0, 0, 1, },
+
+4| {0, 1, 0, 0, },
+
+	 alpha = 0.0
+	 phi = -0.0
+		--BETA [f][delta]--
+   
+
+		--GAMMA [l][delta]--
+   
+
+	 RESULTS
+		 RC = 0.000000
+		--y[n][F][DELTA]--
+   		y[0][0][0]=1.0
+		y[1][3][92]=1.0
+		y[2][3][142]=1.0
+		y[3][1][171]=1.0
+
+
+		--z[n][F][DELTA]--
+   		z[1][3][92]=1.0
+		z[1][3][93]=1.0
+		z[1][3][94]=1.0
+		z[1][3][95]=1.0
+		z[1][3][96]=1.0
+		z[2][3][142]=1.0
+		z[2][3][143]=1.0
+		z[2][3][144]=1.0
+		z[2][3][145]=1.0
+
+
+		--q[n][ks]--
+   		q[0][3]=1.0
+		q[1][3]=1.0
+		q[2][3]=1.0
+		q[3][1]=1.0
+
+
+		--h[n][ks]--
+   		h[0][3]=1.0
+		h[1][3]=1.0
+
+
+		--theta[DELTA][E]--
+   		theta[164][2]=1.0
+
+
+		--thetaHat[DELTA][E]--
+   		thetaHat[164][2]=1.0
+		thetaHat[165][2]=1.0
+		thetaHat[166][2]=1.0
+
+
+		--l[ks][ks][E]--
+   		l[3][1][2]=1.0
+
+
+		--g[ks][ks][DELTA][E]--
+   		g[3][1][164][2] =1.0
+		g[3][1][165][2] =1.0
+		g[3][1][166][2] =1.0
+
+
+		 --v---
+ 		 v =171.0
+
+		--r[F][DELTA]--
+   		r[3][92]=1.0
+		r[3][93]=1.0
+		r[3][94]=1.0
+		r[3][95]=1.0
+		r[3][96]=1.0
+		r[3][142]=1.0
+		r[3][143]=1.0
+		r[3][144]=1.0
+		r[3][145]=1.0
+
+
+		--o[ks][ks][DELTA]--
+   		o[3][1][164]=327.0
+		o[3][1][165]=327.0
+		o[3][1][166]=327.0
+
+
+Column Id: 2396;
+			 Column Per Service ID (used to know if column was selected):    0;
+			 Service ID:    8;
+			 Completion time v:  171;
+			 VNF f used at time slot delta r[f][delta]:
+				 r[3][92]:    1;
+				 r[3][93]:    1;
+				 r[3][94]:    1;
+				 r[3][95]:    1;
+				 r[3][96]:    1;
+				 r[3][142]:    1;
+				 r[3][143]:    1;
+				 r[3][144]:    1;
+				 r[3][145]:    1;
+			 Link l used at time slot delta o[l][delta]:
+				 o[4][164]:  327;
+				 o[4][165]:  327;
+				 o[4][166]:  327;

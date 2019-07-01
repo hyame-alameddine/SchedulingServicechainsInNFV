@@ -1,0 +1,3728 @@
+ ILP MODEL 
+	 Parameters:
+		--GRAPH--
+   0 1 2 3 
+-----------
+0| {0, 0, 1, 0, },
+
+1| {1, 0, 0, 0, },
+
+2| {0, 1, 0, 1, },
+
+3| {0, 1, 0, 0, },
+
+		--PHYSICAL LINK CAPACITY--
+   0 1 2 3 
+-----------
+0| {0, 0, 500, 0, },
+
+1| {500, 0, 0, 0, },
+
+2| {0, 500, 0, 500, },
+
+3| {0, 500, 0, 0, },
+
+		--VNF TYPES--
+0  1  2  3  4  
+-----------
+0, 1, 3, 3, 4, 
+
+		--VNF MAPPING TO PHYSICAL SERVERS--
+   0 1 2 3 
+-----------
+0| {0, 0, 0, 1, },
+
+1| {0, 1, 0, 0, },
+
+2| {0, 0, 1, 0, },
+
+3| {0, 0, 0, 1, },
+
+4| {0, 1, 0, 0, },
+
+--NUMBER OF MIDDLEBOXES REQUIRED BY EACH SERVICE--
+0  1  2  
+-----------
+3, 4, 4, 
+
+--SERVICE FUNCTION CHAINING (TYPE OF MIDDLEBOX)--
+   0 1 2 3 
+-----------
+0| {0, 4, 1, -1, },
+
+1| {0, 4, 3, 1, },
+
+2| {0, 3, 4, 1, },
+
+--PROCESING TIME OF MIDDLEBOXES OF EACH SERVICE--
+   0 1 2 3 
+-----------
+0| {0, 2, 0, -1, },
+
+1| {0, 2, 4, 0, },
+
+2| {0, 2, 1, 0, },
+
+--BANDWIDTH REQUIRED BY EACH SERVICE--
+0  1  2  
+-----------
+307, 437, 304, 
+
+--TRAFFIC SIZE OF EACH SERVICE--
+0  1  2  
+-----------
+1246, 1228, 811, 
+
+--DEADLINE TIME OF EACH SERVICE--
+0  1  2  
+-----------
+492, 88, 243, 
+
+--VIRTUAL LINKS ASSIGNMENT FOR SERVICES--
+0  1  2  3  4  5  6  7  
+-----------
+0, 0, 1, 1, 1, 2, 2, 2, 
+
+--ORIGIN OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  
+-----------
+0, 1, 0, 1, 2, 0, 1, 2, 
+
+--DESTINATION OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  
+-----------
+1, 2, 1, 2, 3, 1, 2, 3, 
+
+		ID:   0
+Physical Machine Nb:   4 
+Link Nb:    5 
+VNF type Nb:    5 
+VNF Nb:    5 
+Min link Capacity:  500 
+Max link Capacity:  500 
+Physical Machines 
+	Physical Machine id:    0 
+		 Hosted VNFs 
+	Physical Machine id:    1 
+		 Hosted VNFs 
+		Physical server Id:    1; VNF Id :    1; Type:    1; 
+		Physical server Id:    1; VNF Id :    4; Type:    4; 
+	Physical Machine id:    2 
+		 Hosted VNFs 
+		Physical server Id:    2; VNF Id :    2; Type:    3; 
+	Physical Machine id:    3 
+		 Hosted VNFs 
+		Physical server Id:    3; VNF Id :    0; Type:    0; 
+		Physical server Id:    3; VNF Id :    3; Type:    3; 
+Links 
+	Link id:    0; Capacity:  500; Bandwidth:  500; Source id:    0; Destination id:    2 Weight:    1
+	Link id:    1; Capacity:  500; Bandwidth:  500; Source id:    1; Destination id:    0 Weight:    1
+	Link id:    2; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    1 Weight:    1
+	Link id:    3; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    3 Weight:    1
+	Link id:    4; Capacity:  500; Bandwidth:  500; Source id:    3; Destination id:    1 Weight:    1
+
+		 Services
+		Service Id:    0;
+	 Middlebox Nb:    3 
+	 Bandwidth:  307 
+	 Deadline:  492
+	 Traffic size: 1246 
+	 Completion Time:    7
+	 Arrival Time: 0.000000
+	 Departure Time: 0.031621
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    0; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot    0
+			 Is Processing at time slots :
+		Service Id :    0; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot    5
+			 Is Processing at time slots :   5   6
+		Service Id :    0; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot    7
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    0; VLink Id :    0; Continious Id:    0;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   1   2   3   4
+		Service Id:    0; VLink Id :    1; Continious Id:    1;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0   0
+		Service Id:    1;
+	 Middlebox Nb:    4 
+	 Bandwidth:  437 
+	 Deadline:   88
+	 Traffic size: 1228 
+	 Completion Time:   23
+	 Arrival Time: 0.006265
+	 Departure Time: 0.401644
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    1; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot    8
+			 Is Processing at time slots :
+		Service Id :    1; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot   11
+			 Is Processing at time slots :  11  12
+		Service Id :    1; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   16
+			 Is Processing at time slots :  16  17  18  19
+		Service Id :    1; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   23
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    1; VLink Id :    0; Continious Id:    2;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    8
+			 Is transmiting at time slots :   8   9  10
+		Service Id:    1; VLink Id :    1; Continious Id:    3;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   13
+			 Is transmiting at time slots :  13  14  15
+		Service Id:    1; VLink Id :    2; Continious Id:    4;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   20
+			 Is transmiting at time slots :  20  21  22
+		Service Id:    2;
+	 Middlebox Nb:    4 
+	 Bandwidth:  304 
+	 Deadline:  243
+	 Traffic size:  811 
+	 Completion Time:   30
+	 Arrival Time: 0.017776
+	 Departure Time: 0.214346
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    2; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   24
+			 Is Processing at time slots :
+		Service Id :    2; MiddleBox Id:    1; Type:    3; Processing time:    2;Mapped to VNF id:    3;
+			 Started Processing at time slot   24
+			 Is Processing at time slots :  24  25
+		Service Id :    2; MiddleBox Id:    2; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   29
+			 Is Processing at time slots :  29
+		Service Id :    2; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   30
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    2; VLink Id :    0; Continious Id:    5;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    2; VLink Id :    1; Continious Id:    6;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   26
+			 Is transmiting at time slots :  26  27  28
+		Service Id:    2; VLink Id :    2; Continious Id:    7;  Source Middlebox: id    2; type    4; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+	 RESULTS
+		 Objective = 15.000000
+		--y[s][n][F][DELTA]--
+   		y[0][0][0][0] =1.0
+		y[0][1][4][12] =1.0
+		y[0][2][1][14] =1.0
+		y[1][0][0][0] =1.0
+		y[1][1][4][3] =1.0
+		y[1][2][2][8] =1.0
+		y[1][3][1][15] =1.0
+		y[2][0][0][0] =1.0
+		y[2][1][3][0] =1.0
+		y[2][2][4][7] =1.0
+		y[2][3][1][14] =1.0
+
+
+		--z[s][n][F][DELTA]--
+   		z[0][1][4][12] =1.0
+		z[0][1][4][13] =1.0
+		z[1][1][4][3] =1.0
+		z[1][1][4][4] =1.0
+		z[1][2][2][8] =1.0
+		z[1][2][2][9] =1.0
+		z[1][2][2][10] =1.0
+		z[1][2][2][11] =1.0
+		z[2][1][3][0] =1.0
+		z[2][1][3][1] =1.0
+		z[2][2][4][7] =1.0
+
+
+		--q[s][n][ks]--
+   		q[0][0][3]=1.0
+		q[0][1][1]=1.0
+		q[0][2][1]=1.0
+		q[1][0][3]=1.0
+		q[1][1][1]=1.0
+		q[1][2][2]=1.0
+		q[1][3][1]=1.0
+		q[2][0][3]=1.0
+		q[2][1][3]=1.0
+		q[2][2][1]=1.0
+		q[2][3][1]=1.0
+
+
+		--h[s][n][ks]--
+   		h[0][1][1]=1.0
+		h[2][0][3]=1.0
+		h[2][2][1]=1.0
+
+
+		--theta[s][DELTA][E]--
+   		theta[0][1][0]=1.0
+		theta[1][0][2]=1.0
+		theta[1][5][3]=1.0
+		theta[1][12][4]=1.0
+		theta[2][3][6]=1.0
+
+
+		--thetaHat[s][DELTA][E]--
+   		thetaHat[0][1][0]=1.0
+		thetaHat[0][2][0]=1.0
+		thetaHat[0][3][0]=1.0
+		thetaHat[0][4][0]=1.0
+		thetaHat[0][5][0]=1.0
+		thetaHat[1][0][2]=1.0
+		thetaHat[1][1][2]=1.0
+		thetaHat[1][2][2]=1.0
+		thetaHat[1][5][3]=1.0
+		thetaHat[1][6][3]=1.0
+		thetaHat[1][7][3]=1.0
+		thetaHat[1][12][4]=1.0
+		thetaHat[1][13][4]=1.0
+		thetaHat[1][14][4]=1.0
+		thetaHat[2][3][6]=1.0
+		thetaHat[2][4][6]=1.0
+		thetaHat[2][5][6]=1.0
+
+
+		--l[ks][ks][E]--
+   		l[0][1][2]=1.0
+		l[0][1][6]=1.0
+		l[1][2][3]=1.0
+		l[2][0][2]=1.0
+		l[2][0][6]=1.0
+		l[2][1][4]=1.0
+		l[3][1][0]=1.0
+		l[3][2][2]=1.0
+		l[3][2][6]=1.0
+
+
+		--g[ks][ks][s][DELTA][E]--
+   		g[0][1][1][0][2]=1.0
+		g[0][1][1][1][2]=1.0
+		g[0][1][1][2][2]=1.0
+		g[0][1][2][3][6]=1.0
+		g[0][1][2][4][6]=1.0
+		g[0][1][2][5][6]=1.0
+		g[1][2][1][5][3]=1.0
+		g[1][2][1][6][3]=1.0
+		g[1][2][1][7][3]=1.0
+		g[2][0][1][0][2]=1.0
+		g[2][0][1][1][2]=1.0
+		g[2][0][1][2][2]=1.0
+		g[2][0][2][3][6]=1.0
+		g[2][0][2][4][6]=1.0
+		g[2][0][2][5][6]=1.0
+		g[2][1][1][12][4]=1.0
+		g[2][1][1][13][4]=1.0
+		g[2][1][1][14][4]=1.0
+		g[3][1][0][1][0]=1.0
+		g[3][1][0][2][0]=1.0
+		g[3][1][0][3][0]=1.0
+		g[3][1][0][4][0]=1.0
+		g[3][1][0][5][0]=1.0
+		g[3][2][1][0][2]=1.0
+		g[3][2][1][1][2]=1.0
+		g[3][2][1][2][2]=1.0
+		g[3][2][2][3][6]=1.0
+		g[3][2][2][4][6]=1.0
+		g[3][2][2][5][6]=1.0
+
+
+ ILP MODEL 
+	 Parameters:
+		--GRAPH--
+   0 1 2 3 
+-----------
+0| {0, 0, 1, 0, },
+
+1| {1, 0, 0, 0, },
+
+2| {0, 1, 0, 1, },
+
+3| {0, 1, 0, 0, },
+
+		--PHYSICAL LINK CAPACITY--
+   0 1 2 3 
+-----------
+0| {0, 0, 500, 0, },
+
+1| {500, 0, 0, 0, },
+
+2| {0, 500, 0, 500, },
+
+3| {0, 500, 0, 0, },
+
+		--VNF TYPES--
+0  1  2  3  4  
+-----------
+0, 1, 3, 3, 4, 
+
+		--VNF MAPPING TO PHYSICAL SERVERS--
+   0 1 2 3 
+-----------
+0| {0, 0, 0, 1, },
+
+1| {0, 1, 0, 0, },
+
+2| {0, 0, 1, 0, },
+
+3| {0, 0, 0, 1, },
+
+4| {0, 1, 0, 0, },
+
+--NUMBER OF MIDDLEBOXES REQUIRED BY EACH SERVICE--
+0  1  2  3  4  5  
+-----------
+3, 4, 4, 4, 5, 3, 
+
+--SERVICE FUNCTION CHAINING (TYPE OF MIDDLEBOX)--
+   0 1 2 3 4 
+-----------
+0| {0, 4, 1, -1, -1, },
+
+1| {0, 4, 3, 1, -1, },
+
+2| {0, 3, 4, 1, -1, },
+
+3| {0, 3, 3, 1, -1, },
+
+4| {0, 3, 4, 4, 1, },
+
+5| {0, 3, 1, -1, -1, },
+
+--PROCESING TIME OF MIDDLEBOXES OF EACH SERVICE--
+   0 1 2 3 4 
+-----------
+0| {0, 2, 0, -1, -1, },
+
+1| {0, 2, 4, 0, -1, },
+
+2| {0, 2, 1, 0, -1, },
+
+3| {0, 2, 3, 0, -1, },
+
+4| {0, 3, 5, 1, 0, },
+
+5| {0, 5, 0, -1, -1, },
+
+--BANDWIDTH REQUIRED BY EACH SERVICE--
+0  1  2  3  4  5  
+-----------
+307, 437, 304, 456, 440, 329, 
+
+--TRAFFIC SIZE OF EACH SERVICE--
+0  1  2  3  4  5  
+-----------
+1246, 1228, 811, 581, 1174, 817, 
+
+--DEADLINE TIME OF EACH SERVICE--
+0  1  2  3  4  5  
+-----------
+492, 88, 243, 402, 99, 176, 
+
+--VIRTUAL LINKS ASSIGNMENT FOR SERVICES--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  
+-----------
+0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 
+
+--ORIGIN OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  
+-----------
+0, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 3, 0, 1, 
+
+--DESTINATION OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  
+-----------
+1, 2, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 1, 2, 
+
+		ID:   0
+Physical Machine Nb:   4 
+Link Nb:    5 
+VNF type Nb:    5 
+VNF Nb:    5 
+Min link Capacity:  500 
+Max link Capacity:  500 
+Physical Machines 
+	Physical Machine id:    0 
+		 Hosted VNFs 
+	Physical Machine id:    1 
+		 Hosted VNFs 
+		Physical server Id:    1; VNF Id :    1; Type:    1; 
+		Physical server Id:    1; VNF Id :    4; Type:    4; 
+	Physical Machine id:    2 
+		 Hosted VNFs 
+		Physical server Id:    2; VNF Id :    2; Type:    3; 
+	Physical Machine id:    3 
+		 Hosted VNFs 
+		Physical server Id:    3; VNF Id :    0; Type:    0; 
+		Physical server Id:    3; VNF Id :    3; Type:    3; 
+Links 
+	Link id:    0; Capacity:  500; Bandwidth:  500; Source id:    0; Destination id:    2 Weight:    1
+	Link id:    1; Capacity:  500; Bandwidth:  500; Source id:    1; Destination id:    0 Weight:    1
+	Link id:    2; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    1 Weight:    1
+	Link id:    3; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    3 Weight:    1
+	Link id:    4; Capacity:  500; Bandwidth:  500; Source id:    3; Destination id:    1 Weight:    1
+
+		 Services
+		Service Id:    0;
+	 Middlebox Nb:    3 
+	 Bandwidth:  307 
+	 Deadline:  492
+	 Traffic size: 1246 
+	 Completion Time:    7
+	 Arrival Time: 0.000000
+	 Departure Time: 0.031621
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    0; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot    0
+			 Is Processing at time slots :
+		Service Id :    0; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot    5
+			 Is Processing at time slots :   5   6
+		Service Id :    0; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot    7
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    0; VLink Id :    0; Continious Id:    0;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   1   2   3   4
+		Service Id:    0; VLink Id :    1; Continious Id:    1;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0   0
+		Service Id:    1;
+	 Middlebox Nb:    4 
+	 Bandwidth:  437 
+	 Deadline:   88
+	 Traffic size: 1228 
+	 Completion Time:   23
+	 Arrival Time: 0.006265
+	 Departure Time: 0.401644
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    1; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot    8
+			 Is Processing at time slots :
+		Service Id :    1; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot   11
+			 Is Processing at time slots :  11  12
+		Service Id :    1; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   16
+			 Is Processing at time slots :  16  17  18  19
+		Service Id :    1; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   23
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    1; VLink Id :    0; Continious Id:    2;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    8
+			 Is transmiting at time slots :   8   9  10
+		Service Id:    1; VLink Id :    1; Continious Id:    3;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   13
+			 Is transmiting at time slots :  13  14  15
+		Service Id:    1; VLink Id :    2; Continious Id:    4;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   20
+			 Is transmiting at time slots :  20  21  22
+		Service Id:    2;
+	 Middlebox Nb:    4 
+	 Bandwidth:  304 
+	 Deadline:  243
+	 Traffic size:  811 
+	 Completion Time:   30
+	 Arrival Time: 0.017776
+	 Departure Time: 0.214346
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    2; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   24
+			 Is Processing at time slots :
+		Service Id :    2; MiddleBox Id:    1; Type:    3; Processing time:    2;Mapped to VNF id:    3;
+			 Started Processing at time slot   24
+			 Is Processing at time slots :  24  25
+		Service Id :    2; MiddleBox Id:    2; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   29
+			 Is Processing at time slots :  29
+		Service Id :    2; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   30
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    2; VLink Id :    0; Continious Id:    5;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    2; VLink Id :    1; Continious Id:    6;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   26
+			 Is transmiting at time slots :  26  27  28
+		Service Id:    2; VLink Id :    2; Continious Id:    7;  Source Middlebox: id    2; type    4; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3;
+	 Middlebox Nb:    4 
+	 Bandwidth:  456 
+	 Deadline:  402
+	 Traffic size:  581 
+	 Completion Time:   38
+	 Arrival Time: 0.070680
+	 Departure Time: 0.416391
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    3; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   31
+			 Is Processing at time slots :
+		Service Id :    3; MiddleBox Id:    1; Type:    3; Processing time:    2;Mapped to VNF id:    3;
+			 Started Processing at time slot   31
+			 Is Processing at time slots :  31  32
+		Service Id :    3; MiddleBox Id:    2; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   33
+			 Is Processing at time slots :  33  34  35
+		Service Id :    3; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   38
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    3; VLink Id :    0; Continious Id:    8;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:    3; VLink Id :    1; Continious Id:    9;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:    3; VLink Id :    2; Continious Id:   10;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   36
+			 Is transmiting at time slots :  36  37
+		Service Id:    4;
+	 Middlebox Nb:    5 
+	 Bandwidth:  440 
+	 Deadline:   99
+	 Traffic size: 1174 
+	 Completion Time:   51
+	 Arrival Time: 0.075012
+	 Departure Time: 0.103214
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    4; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   39
+			 Is Processing at time slots :
+		Service Id :    4; MiddleBox Id:    1; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   39
+			 Is Processing at time slots :  39  40  41
+		Service Id :    4; MiddleBox Id:    2; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot   45
+			 Is Processing at time slots :  45  46  47  48  49
+		Service Id :    4; MiddleBox Id:    3; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   50
+			 Is Processing at time slots :  50
+		Service Id :    4; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   51
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    4; VLink Id :    0; Continious Id:   11;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    4; VLink Id :    1; Continious Id:   12;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   42
+			 Is transmiting at time slots :  42  43  44
+		Service Id:    4; VLink Id :    2; Continious Id:   13;  Source Middlebox: id    2; type    4; Destination Middlebox: id    3; type    4 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    4; VLink Id :    3; Continious Id:   14;  Source Middlebox: id    3; type    4; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    5;
+	 Middlebox Nb:    3 
+	 Bandwidth:  329 
+	 Deadline:  176
+	 Traffic size:  817 
+	 Completion Time:   60
+	 Arrival Time: 0.129037
+	 Departure Time: 0.466294
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    5; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   52
+			 Is Processing at time slots :
+		Service Id :    5; MiddleBox Id:    1; Type:    3; Processing time:    5;Mapped to VNF id:    3;
+			 Started Processing at time slot   52
+			 Is Processing at time slots :  52  53  54  55  56
+		Service Id :    5; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   60
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    5; VLink Id :    0; Continious Id:   15;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    5; VLink Id :    1; Continious Id:   16;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   57
+			 Is transmiting at time slots :  57  58  59
+	 RESULTS
+		 Objective = 15.000000
+		--y[s][n][F][DELTA]--
+   		y[0][0][0][0] =1.0
+		y[0][1][4][13] =1.0
+		y[0][2][1][15] =1.0
+		y[1][0][0][0] =1.0
+		y[1][1][4][3] =1.0
+		y[1][2][2][8] =1.0
+		y[1][3][1][15] =1.0
+		y[2][0][0][0] =1.0
+		y[2][1][2][5] =1.0
+		y[2][2][4][11] =1.0
+		y[2][3][1][15] =1.0
+		y[3][0][0][0] =1.0
+		y[3][1][2][2] =1.0
+		y[3][2][3][10] =1.0
+		y[3][3][1][15] =1.0
+		y[4][0][0][0] =1.0
+		y[4][1][3][0] =1.0
+		y[4][2][4][6] =1.0
+		y[4][3][4][12] =1.0
+		y[4][4][1][15] =1.0
+		y[5][0][0][0] =1.0
+		y[5][1][3][4] =1.0
+		y[5][2][1][15] =1.0
+
+
+		--z[s][n][F][DELTA]--
+   		z[0][1][4][13] =1.0
+		z[0][1][4][14] =1.0
+		z[1][1][4][3] =1.0
+		z[1][1][4][4] =1.0
+		z[1][2][2][8] =1.0
+		z[1][2][2][9] =1.0
+		z[1][2][2][10] =1.0
+		z[1][2][2][11] =1.0
+		z[2][1][2][5] =1.0
+		z[2][1][2][6] =1.0
+		z[2][2][4][11] =1.0
+		z[3][1][2][2] =1.0
+		z[3][1][2][3] =1.0
+		z[3][2][3][10] =1.0
+		z[3][2][3][11] =1.0
+		z[3][2][3][12] =1.0
+		z[4][1][3][0] =1.0
+		z[4][1][3][1] =1.0
+		z[4][1][3][2] =1.0
+		z[4][2][4][6] =1.0
+		z[4][2][4][7] =1.0
+		z[4][2][4][8] =1.0
+		z[4][2][4][9] =1.0
+		z[4][2][4][10] =1.0
+		z[4][3][4][12] =1.0
+		z[5][1][3][4] =1.0
+		z[5][1][3][5] =1.0
+		z[5][1][3][6] =1.0
+		z[5][1][3][7] =1.0
+		z[5][1][3][8] =1.0
+
+
+		--q[s][n][ks]--
+   		q[0][0][3]=1.0
+		q[0][1][1]=1.0
+		q[0][2][1]=1.0
+		q[1][0][3]=1.0
+		q[1][1][1]=1.0
+		q[1][2][2]=1.0
+		q[1][3][1]=1.0
+		q[2][0][3]=1.0
+		q[2][1][2]=1.0
+		q[2][2][1]=1.0
+		q[2][3][1]=1.0
+		q[3][0][3]=1.0
+		q[3][1][2]=1.0
+		q[3][2][3]=1.0
+		q[3][3][1]=1.0
+		q[4][0][3]=1.0
+		q[4][1][3]=1.0
+		q[4][2][1]=1.0
+		q[4][3][1]=1.0
+		q[4][4][1]=1.0
+		q[5][0][3]=1.0
+		q[5][1][3]=1.0
+		q[5][2][1]=1.0
+
+
+		--h[s][n][ks]--
+   		h[0][1][1]=1.0
+		h[2][2][1]=1.0
+		h[4][0][3]=1.0
+		h[4][2][1]=1.0
+		h[4][3][1]=1.0
+		h[5][0][3]=1.0
+
+
+		--theta[s][DELTA][E]--
+   		theta[0][6][0]=1.0
+		theta[1][0][2]=1.0
+		theta[1][5][3]=1.0
+		theta[1][12][4]=1.0
+		theta[2][2][5]=1.0
+		theta[2][7][6]=1.0
+		theta[3][0][8]=1.0
+		theta[3][6][9]=1.0
+		theta[3][13][10]=1.0
+		theta[4][3][12]=1.0
+		theta[5][9][16]=1.0
+
+
+		--thetaHat[s][DELTA][E]--
+   		thetaHat[0][6][0]=1.0
+		thetaHat[0][7][0]=1.0
+		thetaHat[0][8][0]=1.0
+		thetaHat[0][9][0]=1.0
+		thetaHat[0][10][0]=1.0
+		thetaHat[1][0][2]=1.0
+		thetaHat[1][1][2]=1.0
+		thetaHat[1][2][2]=1.0
+		thetaHat[1][5][3]=1.0
+		thetaHat[1][6][3]=1.0
+		thetaHat[1][7][3]=1.0
+		thetaHat[1][12][4]=1.0
+		thetaHat[1][13][4]=1.0
+		thetaHat[1][14][4]=1.0
+		thetaHat[2][2][5]=1.0
+		thetaHat[2][3][5]=1.0
+		thetaHat[2][4][5]=1.0
+		thetaHat[2][7][6]=1.0
+		thetaHat[2][8][6]=1.0
+		thetaHat[2][9][6]=1.0
+		thetaHat[3][0][8]=1.0
+		thetaHat[3][1][8]=1.0
+		thetaHat[3][6][9]=1.0
+		thetaHat[3][7][9]=1.0
+		thetaHat[3][13][10]=1.0
+		thetaHat[3][14][10]=1.0
+		thetaHat[4][3][12]=1.0
+		thetaHat[4][4][12]=1.0
+		thetaHat[4][5][12]=1.0
+		thetaHat[5][9][16]=1.0
+		thetaHat[5][10][16]=1.0
+		thetaHat[5][11][16]=1.0
+
+
+		--l[ks][ks][E]--
+   		l[0][1][6]=1.0
+		l[1][2][3]=1.0
+		l[2][0][6]=1.0
+		l[2][1][4]=1.0
+		l[2][1][16]=1.0
+		l[2][3][9]=1.0
+		l[3][1][0]=1.0
+		l[3][1][2]=1.0
+		l[3][1][10]=1.0
+		l[3][1][12]=1.0
+		l[3][2][5]=1.0
+		l[3][2][8]=1.0
+		l[3][2][16]=1.0
+
+
+		--g[ks][ks][s][DELTA][E]--
+   		g[0][1][2][7][6]=1.0
+		g[0][1][2][8][6]=1.0
+		g[0][1][2][9][6]=1.0
+		g[1][2][1][5][3]=1.0
+		g[1][2][1][6][3]=1.0
+		g[1][2][1][7][3]=1.0
+		g[2][0][2][7][6]=1.0
+		g[2][0][2][8][6]=1.0
+		g[2][0][2][9][6]=1.0
+		g[2][1][1][12][4]=1.0
+		g[2][1][1][13][4]=1.0
+		g[2][1][1][14][4]=1.0
+		g[2][1][5][9][16]=1.0
+		g[2][1][5][10][16]=1.0
+		g[2][1][5][11][16]=1.0
+		g[2][3][3][6][9]=1.0
+		g[2][3][3][7][9]=1.0
+		g[3][1][0][6][0]=1.0
+		g[3][1][0][7][0]=1.0
+		g[3][1][0][8][0]=1.0
+		g[3][1][0][9][0]=1.0
+		g[3][1][0][10][0]=1.0
+		g[3][1][1][0][2]=1.0
+		g[3][1][1][1][2]=1.0
+		g[3][1][1][2][2]=1.0
+		g[3][1][3][13][10]=1.0
+		g[3][1][3][14][10]=1.0
+		g[3][1][4][3][12]=1.0
+		g[3][1][4][4][12]=1.0
+		g[3][1][4][5][12]=1.0
+		g[3][2][2][2][5]=1.0
+		g[3][2][2][3][5]=1.0
+		g[3][2][2][4][5]=1.0
+		g[3][2][3][0][8]=1.0
+		g[3][2][3][1][8]=1.0
+		g[3][2][5][9][16]=1.0
+		g[3][2][5][10][16]=1.0
+		g[3][2][5][11][16]=1.0
+
+
+ ILP MODEL 
+	 Parameters:
+		--GRAPH--
+   0 1 2 3 
+-----------
+0| {0, 0, 1, 0, },
+
+1| {1, 0, 0, 0, },
+
+2| {0, 1, 0, 1, },
+
+3| {0, 1, 0, 0, },
+
+		--PHYSICAL LINK CAPACITY--
+   0 1 2 3 
+-----------
+0| {0, 0, 500, 0, },
+
+1| {500, 0, 0, 0, },
+
+2| {0, 500, 0, 500, },
+
+3| {0, 500, 0, 0, },
+
+		--VNF TYPES--
+0  1  2  3  4  
+-----------
+0, 1, 3, 3, 4, 
+
+		--VNF MAPPING TO PHYSICAL SERVERS--
+   0 1 2 3 
+-----------
+0| {0, 0, 0, 1, },
+
+1| {0, 1, 0, 0, },
+
+2| {0, 0, 1, 0, },
+
+3| {0, 0, 0, 1, },
+
+4| {0, 1, 0, 0, },
+
+--NUMBER OF MIDDLEBOXES REQUIRED BY EACH SERVICE--
+0  1  2  
+-----------
+4, 5, 3, 
+
+--SERVICE FUNCTION CHAINING (TYPE OF MIDDLEBOX)--
+   0 1 2 3 4 
+-----------
+0| {0, 4, 3, 1, -1, },
+
+1| {0, 4, 3, 4, 1, },
+
+2| {0, 4, 1, -1, -1, },
+
+--PROCESING TIME OF MIDDLEBOXES OF EACH SERVICE--
+   0 1 2 3 4 
+-----------
+0| {0, 5, 2, 0, -1, },
+
+1| {0, 1, 4, 1, 0, },
+
+2| {0, 2, 0, -1, -1, },
+
+--BANDWIDTH REQUIRED BY EACH SERVICE--
+0  1  2  
+-----------
+368, 491, 454, 
+
+--TRAFFIC SIZE OF EACH SERVICE--
+0  1  2  
+-----------
+844, 736, 1397, 
+
+--DEADLINE TIME OF EACH SERVICE--
+0  1  2  
+-----------
+495, 11, 312, 
+
+--VIRTUAL LINKS ASSIGNMENT FOR SERVICES--
+0  1  2  3  4  5  6  7  8  
+-----------
+0, 0, 0, 1, 1, 1, 1, 2, 2, 
+
+--ORIGIN OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  
+-----------
+0, 1, 2, 0, 1, 2, 3, 0, 1, 
+
+--DESTINATION OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  
+-----------
+1, 2, 3, 1, 2, 3, 4, 1, 2, 
+
+		ID:   0
+Physical Machine Nb:   4 
+Link Nb:    5 
+VNF type Nb:    5 
+VNF Nb:    5 
+Min link Capacity:  500 
+Max link Capacity:  500 
+Physical Machines 
+	Physical Machine id:    0 
+		 Hosted VNFs 
+	Physical Machine id:    1 
+		 Hosted VNFs 
+		Physical server Id:    1; VNF Id :    1; Type:    1; 
+		Physical server Id:    1; VNF Id :    4; Type:    4; 
+	Physical Machine id:    2 
+		 Hosted VNFs 
+		Physical server Id:    2; VNF Id :    2; Type:    3; 
+	Physical Machine id:    3 
+		 Hosted VNFs 
+		Physical server Id:    3; VNF Id :    0; Type:    0; 
+		Physical server Id:    3; VNF Id :    3; Type:    3; 
+Links 
+	Link id:    0; Capacity:  500; Bandwidth:  500; Source id:    0; Destination id:    2 Weight:    1
+	Link id:    1; Capacity:  500; Bandwidth:  500; Source id:    1; Destination id:    0 Weight:    1
+	Link id:    2; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    1 Weight:    1
+	Link id:    3; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    3 Weight:    1
+	Link id:    4; Capacity:  500; Bandwidth:  500; Source id:    3; Destination id:    1 Weight:    1
+
+		 Services
+		Service Id:    0;
+	 Middlebox Nb:    4 
+	 Bandwidth:  368 
+	 Deadline:  495
+	 Traffic size:  844 
+	 Completion Time:   16
+	 Arrival Time: 0.000000
+	 Departure Time: 0.031621
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    0; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot    0
+			 Is Processing at time slots :
+		Service Id :    0; MiddleBox Id:    1; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot    3
+			 Is Processing at time slots :   3   4   5   6   7
+		Service Id :    0; MiddleBox Id:    2; Type:    3; Processing time:    2;Mapped to VNF id:    3;
+			 Started Processing at time slot   11
+			 Is Processing at time slots :  11  12
+		Service Id :    0; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   16
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    0; VLink Id :    0; Continious Id:    0;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   1   2
+		Service Id:    0; VLink Id :    1; Continious Id:    1;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    8
+			 Is transmiting at time slots :   8   9  10
+		Service Id:    0; VLink Id :    2; Continious Id:    2;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   13
+			 Is transmiting at time slots :  13  14  15
+		Service Id:    1;
+	 Middlebox Nb:    5 
+	 Bandwidth:  491 
+	 Deadline:   11
+	 Traffic size:  736 
+	 Completion Time:   29
+	 Arrival Time: 0.006265
+	 Departure Time: 0.401644
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    1; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   17
+			 Is Processing at time slots :
+		Service Id :    1; MiddleBox Id:    1; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   19
+			 Is Processing at time slots :  19
+		Service Id :    1; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   22
+			 Is Processing at time slots :  22  23  24  25
+		Service Id :    1; MiddleBox Id:    3; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   28
+			 Is Processing at time slots :  28
+		Service Id :    1; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   29
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    1; VLink Id :    0; Continious Id:    3;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   17
+			 Is transmiting at time slots :  17  18
+		Service Id:    1; VLink Id :    1; Continious Id:    4;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   20
+			 Is transmiting at time slots :  20  21
+		Service Id:    1; VLink Id :    2; Continious Id:    5;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   26
+			 Is transmiting at time slots :  26  27
+		Service Id:    1; VLink Id :    3; Continious Id:    6;  Source Middlebox: id    3; type    4; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:    2;
+	 Middlebox Nb:    3 
+	 Bandwidth:  454 
+	 Deadline:  312
+	 Traffic size: 1397 
+	 Completion Time:   36
+	 Arrival Time: 0.017776
+	 Departure Time: 0.214346
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    2; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   30
+			 Is Processing at time slots :
+		Service Id :    2; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot   34
+			 Is Processing at time slots :  34  35
+		Service Id :    2; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   36
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    2; VLink Id :    0; Continious Id:    7;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   30
+			 Is transmiting at time slots :  30  31  32  33
+		Service Id:    2; VLink Id :    1; Continious Id:    8;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+	 RESULTS
+		 Objective = 16.000000
+		--y[s][n][F][DELTA]--
+   		y[0][0][0][0] =1.0
+		y[0][1][4][3] =1.0
+		y[0][2][3][11] =1.0
+		y[0][3][1][16] =1.0
+		y[1][0][0][0] =1.0
+		y[1][1][4][2] =1.0
+		y[1][2][2][9] =1.0
+		y[1][3][4][15] =1.0
+		y[1][4][1][16] =1.0
+		y[2][0][0][0] =1.0
+		y[2][1][4][11] =1.0
+		y[2][2][1][15] =1.0
+
+
+		--z[s][n][F][DELTA]--
+   		z[0][1][4][3] =1.0
+		z[0][1][4][4] =1.0
+		z[0][1][4][5] =1.0
+		z[0][1][4][6] =1.0
+		z[0][1][4][7] =1.0
+		z[0][2][3][11] =1.0
+		z[0][2][3][12] =1.0
+		z[1][1][4][2] =1.0
+		z[1][2][2][9] =1.0
+		z[1][2][2][10] =1.0
+		z[1][2][2][11] =1.0
+		z[1][2][2][12] =1.0
+		z[1][3][4][15] =1.0
+		z[2][1][4][11] =1.0
+		z[2][1][4][12] =1.0
+
+
+		--q[s][n][ks]--
+   		q[0][0][3]=1.0
+		q[0][1][1]=1.0
+		q[0][2][3]=1.0
+		q[0][3][1]=1.0
+		q[1][0][3]=1.0
+		q[1][1][1]=1.0
+		q[1][2][2]=1.0
+		q[1][3][1]=1.0
+		q[1][4][1]=1.0
+		q[2][0][3]=1.0
+		q[2][1][1]=1.0
+		q[2][2][1]=1.0
+
+
+		--h[s][n][ks]--
+   		h[1][3][1]=1.0
+		h[2][1][1]=1.0
+
+
+		--theta[s][DELTA][E]--
+   		theta[0][0][0]=1.0
+		theta[0][8][1]=1.0
+		theta[0][13][2]=1.0
+		theta[1][0][3]=1.0
+		theta[1][4][4]=1.0
+		theta[1][13][5]=1.0
+		theta[2][5][7]=1.0
+
+
+		--thetaHat[s][DELTA][E]--
+   		thetaHat[0][0][0]=1.0
+		thetaHat[0][1][0]=1.0
+		thetaHat[0][2][0]=1.0
+		thetaHat[0][8][1]=1.0
+		thetaHat[0][9][1]=1.0
+		thetaHat[0][10][1]=1.0
+		thetaHat[0][13][2]=1.0
+		thetaHat[0][14][2]=1.0
+		thetaHat[0][15][2]=1.0
+		thetaHat[1][0][3]=1.0
+		thetaHat[1][1][3]=1.0
+		thetaHat[1][4][4]=1.0
+		thetaHat[1][5][4]=1.0
+		thetaHat[1][13][5]=1.0
+		thetaHat[1][14][5]=1.0
+		thetaHat[2][5][7]=1.0
+		thetaHat[2][6][7]=1.0
+		thetaHat[2][7][7]=1.0
+		thetaHat[2][8][7]=1.0
+
+
+		--l[ks][ks][E]--
+   		l[0][1][0]=1.0
+		l[0][1][5]=1.0
+		l[0][1][7]=1.0
+		l[1][2][4]=1.0
+		l[1][3][1]=1.0
+		l[2][0][0]=1.0
+		l[2][0][5]=1.0
+		l[2][0][7]=1.0
+		l[2][1][2]=1.0
+		l[3][1][3]=1.0
+		l[3][2][0]=1.0
+		l[3][2][2]=1.0
+		l[3][2][7]=1.0
+
+
+		--g[ks][ks][s][DELTA][E]--
+   		g[0][1][0][0][0]=1.0
+		g[0][1][0][1][0]=1.0
+		g[0][1][0][2][0]=1.0
+		g[0][1][1][13][5]=1.0
+		g[0][1][1][14][5]=1.0
+		g[0][1][2][5][7]=1.0
+		g[0][1][2][6][7]=1.0
+		g[0][1][2][7][7]=1.0
+		g[0][1][2][8][7]=1.0
+		g[1][2][1][4][4]=1.0
+		g[1][2][1][5][4]=1.0
+		g[1][3][0][8][1]=1.0
+		g[1][3][0][9][1]=1.0
+		g[1][3][0][10][1]=1.0
+		g[2][0][0][0][0]=1.0
+		g[2][0][0][1][0]=1.0
+		g[2][0][0][2][0]=1.0
+		g[2][0][1][13][5]=1.0
+		g[2][0][1][14][5]=1.0
+		g[2][0][2][5][7]=1.0
+		g[2][0][2][6][7]=1.0
+		g[2][0][2][7][7]=1.0
+		g[2][0][2][8][7]=1.0
+		g[2][1][0][13][2]=1.0
+		g[2][1][0][14][2]=1.0
+		g[2][1][0][15][2]=1.0
+		g[3][1][1][0][3]=1.0
+		g[3][1][1][1][3]=1.0
+		g[3][2][0][0][0]=1.0
+		g[3][2][0][1][0]=1.0
+		g[3][2][0][2][0]=1.0
+		g[3][2][0][13][2]=1.0
+		g[3][2][0][14][2]=1.0
+		g[3][2][0][15][2]=1.0
+		g[3][2][2][5][7]=1.0
+		g[3][2][2][6][7]=1.0
+		g[3][2][2][7][7]=1.0
+		g[3][2][2][8][7]=1.0
+
+
+ ILP MODEL 
+	 Parameters:
+		--GRAPH--
+   0 1 2 3 
+-----------
+0| {0, 0, 1, 0, },
+
+1| {1, 0, 0, 0, },
+
+2| {0, 1, 0, 1, },
+
+3| {0, 1, 0, 0, },
+
+		--PHYSICAL LINK CAPACITY--
+   0 1 2 3 
+-----------
+0| {0, 0, 500, 0, },
+
+1| {500, 0, 0, 0, },
+
+2| {0, 500, 0, 500, },
+
+3| {0, 500, 0, 0, },
+
+		--VNF TYPES--
+0  1  2  3  4  
+-----------
+0, 1, 3, 3, 4, 
+
+		--VNF MAPPING TO PHYSICAL SERVERS--
+   0 1 2 3 
+-----------
+0| {0, 0, 0, 1, },
+
+1| {0, 1, 0, 0, },
+
+2| {0, 0, 1, 0, },
+
+3| {0, 0, 0, 1, },
+
+4| {0, 1, 0, 0, },
+
+--NUMBER OF MIDDLEBOXES REQUIRED BY EACH SERVICE--
+0  1  2  3  4  5  
+-----------
+4, 5, 3, 5, 4, 4, 
+
+--SERVICE FUNCTION CHAINING (TYPE OF MIDDLEBOX)--
+   0 1 2 3 4 
+-----------
+0| {0, 4, 3, 1, -1, },
+
+1| {0, 4, 3, 4, 1, },
+
+2| {0, 4, 1, -1, -1, },
+
+3| {0, 3, 3, 3, 1, },
+
+4| {0, 4, 3, 1, -1, },
+
+5| {0, 3, 3, 1, -1, },
+
+--PROCESING TIME OF MIDDLEBOXES OF EACH SERVICE--
+   0 1 2 3 4 
+-----------
+0| {0, 5, 2, 0, -1, },
+
+1| {0, 1, 4, 1, 0, },
+
+2| {0, 2, 0, -1, -1, },
+
+3| {0, 1, 1, 1, 0, },
+
+4| {0, 5, 4, 0, -1, },
+
+5| {0, 3, 3, 0, -1, },
+
+--BANDWIDTH REQUIRED BY EACH SERVICE--
+0  1  2  3  4  5  
+-----------
+368, 491, 454, 323, 372, 353, 
+
+--TRAFFIC SIZE OF EACH SERVICE--
+0  1  2  3  4  5  
+-----------
+844, 736, 1397, 834, 1265, 1255, 
+
+--DEADLINE TIME OF EACH SERVICE--
+0  1  2  3  4  5  
+-----------
+495, 11, 312, 418, 356, 168, 
+
+--VIRTUAL LINKS ASSIGNMENT FOR SERVICES--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  
+-----------
+0, 0, 0, 1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 
+
+--ORIGIN OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  
+-----------
+0, 1, 2, 0, 1, 2, 3, 0, 1, 0, 1, 2, 3, 0, 1, 2, 0, 1, 2, 
+
+--DESTINATION OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  
+-----------
+1, 2, 3, 1, 2, 3, 4, 1, 2, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 
+
+		ID:   0
+Physical Machine Nb:   4 
+Link Nb:    5 
+VNF type Nb:    5 
+VNF Nb:    5 
+Min link Capacity:  500 
+Max link Capacity:  500 
+Physical Machines 
+	Physical Machine id:    0 
+		 Hosted VNFs 
+	Physical Machine id:    1 
+		 Hosted VNFs 
+		Physical server Id:    1; VNF Id :    1; Type:    1; 
+		Physical server Id:    1; VNF Id :    4; Type:    4; 
+	Physical Machine id:    2 
+		 Hosted VNFs 
+		Physical server Id:    2; VNF Id :    2; Type:    3; 
+	Physical Machine id:    3 
+		 Hosted VNFs 
+		Physical server Id:    3; VNF Id :    0; Type:    0; 
+		Physical server Id:    3; VNF Id :    3; Type:    3; 
+Links 
+	Link id:    0; Capacity:  500; Bandwidth:  500; Source id:    0; Destination id:    2 Weight:    1
+	Link id:    1; Capacity:  500; Bandwidth:  500; Source id:    1; Destination id:    0 Weight:    1
+	Link id:    2; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    1 Weight:    1
+	Link id:    3; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    3 Weight:    1
+	Link id:    4; Capacity:  500; Bandwidth:  500; Source id:    3; Destination id:    1 Weight:    1
+
+		 Services
+		Service Id:    0;
+	 Middlebox Nb:    4 
+	 Bandwidth:  368 
+	 Deadline:  495
+	 Traffic size:  844 
+	 Completion Time:   16
+	 Arrival Time: 0.000000
+	 Departure Time: 0.031621
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    0; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot    0
+			 Is Processing at time slots :
+		Service Id :    0; MiddleBox Id:    1; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot    3
+			 Is Processing at time slots :   3   4   5   6   7
+		Service Id :    0; MiddleBox Id:    2; Type:    3; Processing time:    2;Mapped to VNF id:    3;
+			 Started Processing at time slot   11
+			 Is Processing at time slots :  11  12
+		Service Id :    0; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   16
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    0; VLink Id :    0; Continious Id:    0;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   1   2
+		Service Id:    0; VLink Id :    1; Continious Id:    1;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    8
+			 Is transmiting at time slots :   8   9  10
+		Service Id:    0; VLink Id :    2; Continious Id:    2;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   13
+			 Is transmiting at time slots :  13  14  15
+		Service Id:    1;
+	 Middlebox Nb:    5 
+	 Bandwidth:  491 
+	 Deadline:   11
+	 Traffic size:  736 
+	 Completion Time:   29
+	 Arrival Time: 0.006265
+	 Departure Time: 0.401644
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    1; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   17
+			 Is Processing at time slots :
+		Service Id :    1; MiddleBox Id:    1; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   19
+			 Is Processing at time slots :  19
+		Service Id :    1; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   22
+			 Is Processing at time slots :  22  23  24  25
+		Service Id :    1; MiddleBox Id:    3; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   28
+			 Is Processing at time slots :  28
+		Service Id :    1; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   29
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    1; VLink Id :    0; Continious Id:    3;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   17
+			 Is transmiting at time slots :  17  18
+		Service Id:    1; VLink Id :    1; Continious Id:    4;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   20
+			 Is transmiting at time slots :  20  21
+		Service Id:    1; VLink Id :    2; Continious Id:    5;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   26
+			 Is transmiting at time slots :  26  27
+		Service Id:    1; VLink Id :    3; Continious Id:    6;  Source Middlebox: id    3; type    4; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:    2;
+	 Middlebox Nb:    3 
+	 Bandwidth:  454 
+	 Deadline:  312
+	 Traffic size: 1397 
+	 Completion Time:   36
+	 Arrival Time: 0.017776
+	 Departure Time: 0.214346
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    2; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   30
+			 Is Processing at time slots :
+		Service Id :    2; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot   34
+			 Is Processing at time slots :  34  35
+		Service Id :    2; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   36
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    2; VLink Id :    0; Continious Id:    7;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   30
+			 Is transmiting at time slots :  30  31  32  33
+		Service Id:    2; VLink Id :    1; Continious Id:    8;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+		Service Id:    3;
+	 Middlebox Nb:    5 
+	 Bandwidth:  323 
+	 Deadline:  418
+	 Traffic size:  834 
+	 Completion Time:   43
+	 Arrival Time: 0.070680
+	 Departure Time: 0.416391
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    3; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   37
+			 Is Processing at time slots :
+		Service Id :    3; MiddleBox Id:    1; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot   37
+			 Is Processing at time slots :  37
+		Service Id :    3; MiddleBox Id:    2; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot   38
+			 Is Processing at time slots :  38
+		Service Id :    3; MiddleBox Id:    3; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot   39
+			 Is Processing at time slots :  39
+		Service Id :    3; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   43
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    3; VLink Id :    0; Continious Id:    9;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3; VLink Id :    1; Continious Id:   10;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3; VLink Id :    2; Continious Id:   11;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3; VLink Id :    3; Continious Id:   12;  Source Middlebox: id    3; type    3; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   40
+			 Is transmiting at time slots :  40  41  42
+		Service Id:    4;
+	 Middlebox Nb:    4 
+	 Bandwidth:  372 
+	 Deadline:  356
+	 Traffic size: 1265 
+	 Completion Time:   65
+	 Arrival Time: 0.075012
+	 Departure Time: 0.103214
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    4; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   44
+			 Is Processing at time slots :
+		Service Id :    4; MiddleBox Id:    1; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot   48
+			 Is Processing at time slots :  48  49  50  51  52
+		Service Id :    4; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   57
+			 Is Processing at time slots :  57  58  59  60
+		Service Id :    4; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   65
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    4; VLink Id :    0; Continious Id:   13;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   44
+			 Is transmiting at time slots :  44  45  46  47
+		Service Id:    4; VLink Id :    1; Continious Id:   14;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   53
+			 Is transmiting at time slots :  53  54  55  56
+		Service Id:    4; VLink Id :    2; Continious Id:   15;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   61
+			 Is transmiting at time slots :  61  62  63  64
+		Service Id:    5;
+	 Middlebox Nb:    4 
+	 Bandwidth:  353 
+	 Deadline:  168
+	 Traffic size: 1255 
+	 Completion Time:   76
+	 Arrival Time: 0.129037
+	 Departure Time: 0.466294
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    5; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   66
+			 Is Processing at time slots :
+		Service Id :    5; MiddleBox Id:    1; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   66
+			 Is Processing at time slots :  66  67  68
+		Service Id :    5; MiddleBox Id:    2; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   69
+			 Is Processing at time slots :  69  70  71
+		Service Id :    5; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   76
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    5; VLink Id :    0; Continious Id:   16;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+		Service Id:    5; VLink Id :    1; Continious Id:   17;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+		Service Id:    5; VLink Id :    2; Continious Id:   18;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   72
+			 Is transmiting at time slots :  72  73  74  75
+	 RESULTS
+		 Objective = 22.000000
+		--y[s][n][F][DELTA]--
+   		y[0][0][0][0] =1.0
+		y[0][1][4][9] =1.0
+		y[0][2][2][17] =1.0
+		y[0][3][1][22] =1.0
+		y[1][0][0][0] =1.0
+		y[1][1][4][2] =1.0
+		y[1][2][2][5] =1.0
+		y[1][3][4][16] =1.0
+		y[1][4][1][17] =1.0
+		y[2][0][0][0] =1.0
+		y[2][1][4][19] =1.0
+		y[2][2][1][22] =1.0
+		y[3][0][0][0] =1.0
+		y[3][1][3][0] =1.0
+		y[3][2][2][9] =1.0
+		y[3][3][3][13] =1.0
+		y[3][4][1][21] =1.0
+		y[4][0][0][0] =1.0
+		y[4][1][4][4] =1.0
+		y[4][2][2][13] =1.0
+		y[4][3][1][22] =1.0
+		y[5][0][0][0] =1.0
+		y[5][1][3][1] =1.0
+		y[5][2][3][6] =1.0
+		y[5][3][1][22] =1.0
+
+
+		--z[s][n][F][DELTA]--
+   		z[0][1][4][9] =1.0
+		z[0][1][4][10] =1.0
+		z[0][1][4][11] =1.0
+		z[0][1][4][12] =1.0
+		z[0][1][4][13] =1.0
+		z[0][2][2][17] =1.0
+		z[0][2][2][18] =1.0
+		z[1][1][4][2] =1.0
+		z[1][2][2][5] =1.0
+		z[1][2][2][6] =1.0
+		z[1][2][2][7] =1.0
+		z[1][2][2][8] =1.0
+		z[1][3][4][16] =1.0
+		z[2][1][4][19] =1.0
+		z[2][1][4][20] =1.0
+		z[3][1][3][0] =1.0
+		z[3][2][2][9] =1.0
+		z[3][3][3][13] =1.0
+		z[4][1][4][4] =1.0
+		z[4][1][4][5] =1.0
+		z[4][1][4][6] =1.0
+		z[4][1][4][7] =1.0
+		z[4][1][4][8] =1.0
+		z[4][2][2][13] =1.0
+		z[4][2][2][14] =1.0
+		z[4][2][2][15] =1.0
+		z[4][2][2][16] =1.0
+		z[5][1][3][1] =1.0
+		z[5][1][3][2] =1.0
+		z[5][1][3][3] =1.0
+		z[5][2][3][6] =1.0
+		z[5][2][3][7] =1.0
+		z[5][2][3][8] =1.0
+
+
+		--q[s][n][ks]--
+   		q[0][0][3]=1.0
+		q[0][1][1]=1.0
+		q[0][2][2]=1.0
+		q[0][3][1]=1.0
+		q[1][0][3]=1.0
+		q[1][1][1]=1.0
+		q[1][2][2]=1.0
+		q[1][3][1]=1.0
+		q[1][4][1]=1.0
+		q[2][0][3]=1.0
+		q[2][1][1]=1.0
+		q[2][2][1]=1.0
+		q[3][0][3]=1.0
+		q[3][1][3]=1.0
+		q[3][2][2]=1.0
+		q[3][3][3]=1.0
+		q[3][4][1]=1.0
+		q[4][0][3]=1.0
+		q[4][1][1]=1.0
+		q[4][2][2]=1.0
+		q[4][3][1]=1.0
+		q[5][0][3]=1.0
+		q[5][1][3]=1.0
+		q[5][2][3]=1.0
+		q[5][3][1]=1.0
+
+
+		--h[s][n][ks]--
+   		h[1][3][1]=1.0
+		h[2][1][1]=1.0
+		h[3][0][3]=1.0
+		h[5][0][3]=1.0
+		h[5][1][3]=1.0
+
+
+		--theta[s][DELTA][E]--
+   		theta[0][2][0]=1.0
+		theta[0][14][1]=1.0
+		theta[0][19][2]=1.0
+		theta[1][0][3]=1.0
+		theta[1][3][4]=1.0
+		theta[1][13][5]=1.0
+		theta[2][15][7]=1.0
+		theta[3][5][10]=1.0
+		theta[3][10][11]=1.0
+		theta[3][14][12]=1.0
+		theta[4][0][13]=1.0
+		theta[4][9][14]=1.0
+		theta[4][18][15]=1.0
+		theta[5][17][18]=1.0
+
+
+		--thetaHat[s][DELTA][E]--
+   		thetaHat[0][2][0]=1.0
+		thetaHat[0][3][0]=1.0
+		thetaHat[0][4][0]=1.0
+		thetaHat[0][14][1]=1.0
+		thetaHat[0][15][1]=1.0
+		thetaHat[0][16][1]=1.0
+		thetaHat[0][19][2]=1.0
+		thetaHat[0][20][2]=1.0
+		thetaHat[0][21][2]=1.0
+		thetaHat[1][0][3]=1.0
+		thetaHat[1][1][3]=1.0
+		thetaHat[1][3][4]=1.0
+		thetaHat[1][4][4]=1.0
+		thetaHat[1][13][5]=1.0
+		thetaHat[1][14][5]=1.0
+		thetaHat[2][15][7]=1.0
+		thetaHat[2][16][7]=1.0
+		thetaHat[2][17][7]=1.0
+		thetaHat[2][18][7]=1.0
+		thetaHat[3][5][10]=1.0
+		thetaHat[3][6][10]=1.0
+		thetaHat[3][7][10]=1.0
+		thetaHat[3][10][11]=1.0
+		thetaHat[3][11][11]=1.0
+		thetaHat[3][12][11]=1.0
+		thetaHat[3][14][12]=1.0
+		thetaHat[3][15][12]=1.0
+		thetaHat[3][16][12]=1.0
+		thetaHat[4][0][13]=1.0
+		thetaHat[4][1][13]=1.0
+		thetaHat[4][2][13]=1.0
+		thetaHat[4][3][13]=1.0
+		thetaHat[4][9][14]=1.0
+		thetaHat[4][10][14]=1.0
+		thetaHat[4][11][14]=1.0
+		thetaHat[4][12][14]=1.0
+		thetaHat[4][18][15]=1.0
+		thetaHat[4][19][15]=1.0
+		thetaHat[4][20][15]=1.0
+		thetaHat[4][21][15]=1.0
+		thetaHat[5][17][18]=1.0
+		thetaHat[5][18][18]=1.0
+		thetaHat[5][19][18]=1.0
+		thetaHat[5][20][18]=1.0
+
+
+		--l[ks][ks][E]--
+   		l[0][1][13]=1.0
+		l[0][1][15]=1.0
+		l[0][2][1]=1.0
+		l[0][2][14]=1.0
+		l[1][0][1]=1.0
+		l[1][0][14]=1.0
+		l[1][2][4]=1.0
+		l[1][3][11]=1.0
+		l[2][0][13]=1.0
+		l[2][0][15]=1.0
+		l[2][1][2]=1.0
+		l[2][1][5]=1.0
+		l[2][1][7]=1.0
+		l[2][1][11]=1.0
+		l[3][1][0]=1.0
+		l[3][1][3]=1.0
+		l[3][1][12]=1.0
+		l[3][1][18]=1.0
+		l[3][2][7]=1.0
+		l[3][2][10]=1.0
+		l[3][2][13]=1.0
+
+
+		--g[ks][ks][s][DELTA][E]--
+   		g[0][1][4][0][13]=1.0
+		g[0][1][4][1][13]=1.0
+		g[0][1][4][2][13]=1.0
+		g[0][1][4][3][13]=1.0
+		g[0][1][4][18][15]=1.0
+		g[0][1][4][19][15]=1.0
+		g[0][1][4][20][15]=1.0
+		g[0][1][4][21][15]=1.0
+		g[0][2][0][14][1]=1.0
+		g[0][2][0][15][1]=1.0
+		g[0][2][0][16][1]=1.0
+		g[0][2][4][9][14]=1.0
+		g[0][2][4][10][14]=1.0
+		g[0][2][4][11][14]=1.0
+		g[0][2][4][12][14]=1.0
+		g[1][0][0][14][1]=1.0
+		g[1][0][0][15][1]=1.0
+		g[1][0][0][16][1]=1.0
+		g[1][0][4][9][14]=1.0
+		g[1][0][4][10][14]=1.0
+		g[1][0][4][11][14]=1.0
+		g[1][0][4][12][14]=1.0
+		g[1][2][1][3][4]=1.0
+		g[1][2][1][4][4]=1.0
+		g[1][3][3][10][11]=1.0
+		g[1][3][3][11][11]=1.0
+		g[1][3][3][12][11]=1.0
+		g[2][0][4][0][13]=1.0
+		g[2][0][4][1][13]=1.0
+		g[2][0][4][2][13]=1.0
+		g[2][0][4][3][13]=1.0
+		g[2][0][4][18][15]=1.0
+		g[2][0][4][19][15]=1.0
+		g[2][0][4][20][15]=1.0
+		g[2][0][4][21][15]=1.0
+		g[2][1][0][19][2]=1.0
+		g[2][1][0][20][2]=1.0
+		g[2][1][0][21][2]=1.0
+		g[2][1][1][13][5]=1.0
+		g[2][1][1][14][5]=1.0
+		g[2][1][2][15][7]=1.0
+		g[2][1][2][16][7]=1.0
+		g[2][1][2][17][7]=1.0
+		g[2][1][2][18][7]=1.0
+		g[2][1][3][10][11]=1.0
+		g[2][1][3][11][11]=1.0
+		g[2][1][3][12][11]=1.0
+		g[3][1][0][2][0]=1.0
+		g[3][1][0][3][0]=1.0
+		g[3][1][0][4][0]=1.0
+		g[3][1][1][0][3]=1.0
+		g[3][1][1][1][3]=1.0
+		g[3][1][3][14][12]=1.0
+		g[3][1][3][15][12]=1.0
+		g[3][1][3][16][12]=1.0
+		g[3][1][5][17][18]=1.0
+		g[3][1][5][18][18]=1.0
+		g[3][1][5][19][18]=1.0
+		g[3][1][5][20][18]=1.0
+		g[3][2][2][15][7]=1.0
+		g[3][2][2][16][7]=1.0
+		g[3][2][2][17][7]=1.0
+		g[3][2][2][18][7]=1.0
+		g[3][2][3][5][10]=1.0
+		g[3][2][3][6][10]=1.0
+		g[3][2][3][7][10]=1.0
+		g[3][2][4][0][13]=1.0
+		g[3][2][4][1][13]=1.0
+		g[3][2][4][2][13]=1.0
+		g[3][2][4][3][13]=1.0
+
+
+ ILP MODEL 
+	 Parameters:
+		--GRAPH--
+   0 1 2 3 
+-----------
+0| {0, 0, 1, 0, },
+
+1| {1, 0, 0, 0, },
+
+2| {0, 1, 0, 1, },
+
+3| {0, 1, 0, 0, },
+
+		--PHYSICAL LINK CAPACITY--
+   0 1 2 3 
+-----------
+0| {0, 0, 500, 0, },
+
+1| {500, 0, 0, 0, },
+
+2| {0, 500, 0, 500, },
+
+3| {0, 500, 0, 0, },
+
+		--VNF TYPES--
+0  1  2  3  4  
+-----------
+0, 1, 3, 3, 4, 
+
+		--VNF MAPPING TO PHYSICAL SERVERS--
+   0 1 2 3 
+-----------
+0| {0, 0, 0, 1, },
+
+1| {0, 1, 0, 0, },
+
+2| {0, 0, 1, 0, },
+
+3| {0, 0, 0, 1, },
+
+4| {0, 1, 0, 0, },
+
+--NUMBER OF MIDDLEBOXES REQUIRED BY EACH SERVICE--
+0  1  2  3  4  5  6  7  8  
+-----------
+4, 5, 3, 5, 4, 4, 4, 4, 3, 
+
+--SERVICE FUNCTION CHAINING (TYPE OF MIDDLEBOX)--
+   0 1 2 3 4 
+-----------
+0| {0, 4, 3, 1, -1, },
+
+1| {0, 4, 3, 4, 1, },
+
+2| {0, 4, 1, -1, -1, },
+
+3| {0, 3, 3, 3, 1, },
+
+4| {0, 4, 3, 1, -1, },
+
+5| {0, 3, 3, 1, -1, },
+
+6| {0, 4, 3, 1, -1, },
+
+7| {0, 3, 3, 1, -1, },
+
+8| {0, 4, 1, -1, -1, },
+
+--PROCESING TIME OF MIDDLEBOXES OF EACH SERVICE--
+   0 1 2 3 4 
+-----------
+0| {0, 5, 2, 0, -1, },
+
+1| {0, 1, 4, 1, 0, },
+
+2| {0, 2, 0, -1, -1, },
+
+3| {0, 1, 1, 1, 0, },
+
+4| {0, 5, 4, 0, -1, },
+
+5| {0, 3, 3, 0, -1, },
+
+6| {0, 3, 3, 0, -1, },
+
+7| {0, 4, 5, 0, -1, },
+
+8| {0, 2, 0, -1, -1, },
+
+--BANDWIDTH REQUIRED BY EACH SERVICE--
+0  1  2  3  4  5  6  7  8  
+-----------
+368, 491, 454, 323, 372, 353, 402, 409, 438, 
+
+--TRAFFIC SIZE OF EACH SERVICE--
+0  1  2  3  4  5  6  7  8  
+-----------
+844, 736, 1397, 834, 1265, 1255, 983, 872, 1161, 
+
+--DEADLINE TIME OF EACH SERVICE--
+0  1  2  3  4  5  6  7  8  
+-----------
+495, 11, 312, 418, 356, 168, 83, 135, 98, 
+
+--VIRTUAL LINKS ASSIGNMENT FOR SERVICES--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  
+-----------
+0, 0, 0, 1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 
+
+--ORIGIN OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  
+-----------
+0, 1, 2, 0, 1, 2, 3, 0, 1, 0, 1, 2, 3, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 
+
+--DESTINATION OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  
+-----------
+1, 2, 3, 1, 2, 3, 4, 1, 2, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 
+
+		ID:   0
+Physical Machine Nb:   4 
+Link Nb:    5 
+VNF type Nb:    5 
+VNF Nb:    5 
+Min link Capacity:  500 
+Max link Capacity:  500 
+Physical Machines 
+	Physical Machine id:    0 
+		 Hosted VNFs 
+	Physical Machine id:    1 
+		 Hosted VNFs 
+		Physical server Id:    1; VNF Id :    1; Type:    1; 
+		Physical server Id:    1; VNF Id :    4; Type:    4; 
+	Physical Machine id:    2 
+		 Hosted VNFs 
+		Physical server Id:    2; VNF Id :    2; Type:    3; 
+	Physical Machine id:    3 
+		 Hosted VNFs 
+		Physical server Id:    3; VNF Id :    0; Type:    0; 
+		Physical server Id:    3; VNF Id :    3; Type:    3; 
+Links 
+	Link id:    0; Capacity:  500; Bandwidth:  500; Source id:    0; Destination id:    2 Weight:    1
+	Link id:    1; Capacity:  500; Bandwidth:  500; Source id:    1; Destination id:    0 Weight:    1
+	Link id:    2; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    1 Weight:    1
+	Link id:    3; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    3 Weight:    1
+	Link id:    4; Capacity:  500; Bandwidth:  500; Source id:    3; Destination id:    1 Weight:    1
+
+		 Services
+		Service Id:    0;
+	 Middlebox Nb:    4 
+	 Bandwidth:  368 
+	 Deadline:  495
+	 Traffic size:  844 
+	 Completion Time:   16
+	 Arrival Time: 0.000000
+	 Departure Time: 0.031621
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    0; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot    0
+			 Is Processing at time slots :
+		Service Id :    0; MiddleBox Id:    1; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot    3
+			 Is Processing at time slots :   3   4   5   6   7
+		Service Id :    0; MiddleBox Id:    2; Type:    3; Processing time:    2;Mapped to VNF id:    3;
+			 Started Processing at time slot   11
+			 Is Processing at time slots :  11  12
+		Service Id :    0; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   16
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    0; VLink Id :    0; Continious Id:    0;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   1   2
+		Service Id:    0; VLink Id :    1; Continious Id:    1;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    8
+			 Is transmiting at time slots :   8   9  10
+		Service Id:    0; VLink Id :    2; Continious Id:    2;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   13
+			 Is transmiting at time slots :  13  14  15
+		Service Id:    1;
+	 Middlebox Nb:    5 
+	 Bandwidth:  491 
+	 Deadline:   11
+	 Traffic size:  736 
+	 Completion Time:   29
+	 Arrival Time: 0.006265
+	 Departure Time: 0.401644
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    1; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   17
+			 Is Processing at time slots :
+		Service Id :    1; MiddleBox Id:    1; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   19
+			 Is Processing at time slots :  19
+		Service Id :    1; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   22
+			 Is Processing at time slots :  22  23  24  25
+		Service Id :    1; MiddleBox Id:    3; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   28
+			 Is Processing at time slots :  28
+		Service Id :    1; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   29
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    1; VLink Id :    0; Continious Id:    3;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   17
+			 Is transmiting at time slots :  17  18
+		Service Id:    1; VLink Id :    1; Continious Id:    4;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   20
+			 Is transmiting at time slots :  20  21
+		Service Id:    1; VLink Id :    2; Continious Id:    5;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   26
+			 Is transmiting at time slots :  26  27
+		Service Id:    1; VLink Id :    3; Continious Id:    6;  Source Middlebox: id    3; type    4; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:    2;
+	 Middlebox Nb:    3 
+	 Bandwidth:  454 
+	 Deadline:  312
+	 Traffic size: 1397 
+	 Completion Time:   36
+	 Arrival Time: 0.017776
+	 Departure Time: 0.214346
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    2; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   30
+			 Is Processing at time slots :
+		Service Id :    2; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot   34
+			 Is Processing at time slots :  34  35
+		Service Id :    2; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   36
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    2; VLink Id :    0; Continious Id:    7;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   30
+			 Is transmiting at time slots :  30  31  32  33
+		Service Id:    2; VLink Id :    1; Continious Id:    8;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+		Service Id:    3;
+	 Middlebox Nb:    5 
+	 Bandwidth:  323 
+	 Deadline:  418
+	 Traffic size:  834 
+	 Completion Time:   43
+	 Arrival Time: 0.070680
+	 Departure Time: 0.416391
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    3; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   37
+			 Is Processing at time slots :
+		Service Id :    3; MiddleBox Id:    1; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot   37
+			 Is Processing at time slots :  37
+		Service Id :    3; MiddleBox Id:    2; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot   38
+			 Is Processing at time slots :  38
+		Service Id :    3; MiddleBox Id:    3; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot   39
+			 Is Processing at time slots :  39
+		Service Id :    3; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   43
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    3; VLink Id :    0; Continious Id:    9;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3; VLink Id :    1; Continious Id:   10;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3; VLink Id :    2; Continious Id:   11;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3; VLink Id :    3; Continious Id:   12;  Source Middlebox: id    3; type    3; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   40
+			 Is transmiting at time slots :  40  41  42
+		Service Id:    4;
+	 Middlebox Nb:    4 
+	 Bandwidth:  372 
+	 Deadline:  356
+	 Traffic size: 1265 
+	 Completion Time:   65
+	 Arrival Time: 0.075012
+	 Departure Time: 0.103214
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    4; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   44
+			 Is Processing at time slots :
+		Service Id :    4; MiddleBox Id:    1; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot   48
+			 Is Processing at time slots :  48  49  50  51  52
+		Service Id :    4; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   57
+			 Is Processing at time slots :  57  58  59  60
+		Service Id :    4; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   65
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    4; VLink Id :    0; Continious Id:   13;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   44
+			 Is transmiting at time slots :  44  45  46  47
+		Service Id:    4; VLink Id :    1; Continious Id:   14;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   53
+			 Is transmiting at time slots :  53  54  55  56
+		Service Id:    4; VLink Id :    2; Continious Id:   15;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   61
+			 Is transmiting at time slots :  61  62  63  64
+		Service Id:    5;
+	 Middlebox Nb:    4 
+	 Bandwidth:  353 
+	 Deadline:  168
+	 Traffic size: 1255 
+	 Completion Time:   76
+	 Arrival Time: 0.129037
+	 Departure Time: 0.466294
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    5; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   66
+			 Is Processing at time slots :
+		Service Id :    5; MiddleBox Id:    1; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   66
+			 Is Processing at time slots :  66  67  68
+		Service Id :    5; MiddleBox Id:    2; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   69
+			 Is Processing at time slots :  69  70  71
+		Service Id :    5; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   76
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    5; VLink Id :    0; Continious Id:   16;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+		Service Id:    5; VLink Id :    1; Continious Id:   17;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+		Service Id:    5; VLink Id :    2; Continious Id:   18;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   72
+			 Is transmiting at time slots :  72  73  74  75
+		Service Id:    6;
+	 Middlebox Nb:    4 
+	 Bandwidth:  402 
+	 Deadline:   83
+	 Traffic size:  983 
+	 Completion Time:   92
+	 Arrival Time: 0.139867
+	 Departure Time: 0.200954
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    6; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   77
+			 Is Processing at time slots :
+		Service Id :    6; MiddleBox Id:    1; Type:    4; Processing time:    3;Mapped to VNF id:    4;
+			 Started Processing at time slot   80
+			 Is Processing at time slots :  80  81  82
+		Service Id :    6; MiddleBox Id:    2; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   86
+			 Is Processing at time slots :  86  87  88
+		Service Id :    6; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   92
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    6; VLink Id :    0; Continious Id:   19;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   77
+			 Is transmiting at time slots :  77  78  79
+		Service Id:    6; VLink Id :    1; Continious Id:   20;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   83
+			 Is transmiting at time slots :  83  84  85
+		Service Id:    6; VLink Id :    2; Continious Id:   21;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   89
+			 Is transmiting at time slots :  89  90  91
+		Service Id:    7;
+	 Middlebox Nb:    4 
+	 Bandwidth:  409 
+	 Deadline:  135
+	 Traffic size:  872 
+	 Completion Time:  105
+	 Arrival Time: 0.145143
+	 Departure Time: 0.199650
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    7; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   93
+			 Is Processing at time slots :
+		Service Id :    7; MiddleBox Id:    1; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   93
+			 Is Processing at time slots :  93  94  95  96
+		Service Id :    7; MiddleBox Id:    2; Type:    3; Processing time:    5;Mapped to VNF id:    3;
+			 Started Processing at time slot   97
+			 Is Processing at time slots :  97  98  99 100 101
+		Service Id :    7; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  105
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    7; VLink Id :    0; Continious Id:   22;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    7; VLink Id :    1; Continious Id:   23;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    7; VLink Id :    2; Continious Id:   24;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  102
+			 Is transmiting at time slots : 102 103 104
+		Service Id:    8;
+	 Middlebox Nb:    3 
+	 Bandwidth:  438 
+	 Deadline:   98
+	 Traffic size: 1161 
+	 Completion Time:  111
+	 Arrival Time: 0.156205
+	 Departure Time: 0.374784
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    8; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot  106
+			 Is Processing at time slots :
+		Service Id :    8; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot  109
+			 Is Processing at time slots : 109 110
+		Service Id :    8; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  111
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    8; VLink Id :    0; Continious Id:   25;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  106
+			 Is transmiting at time slots : 106 107 108
+		Service Id:    8; VLink Id :    1; Continious Id:   26;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+	 RESULTS
+		 Objective = 24.000000
+		--y[s][n][F][DELTA]--
+   		y[0][0][0][0] =1.0
+		y[0][1][4][11] =1.0
+		y[0][2][2][19] =1.0
+		y[0][3][1][24] =1.0
+		y[1][0][0][0] =1.0
+		y[1][1][4][2] =1.0
+		y[1][2][2][6] =1.0
+		y[1][3][4][23] =1.0
+		y[1][4][1][24] =1.0
+		y[2][0][0][0] =1.0
+		y[2][1][4][19] =1.0
+		y[2][2][1][21] =1.0
+		y[3][0][0][0] =1.0
+		y[3][1][3][0] =1.0
+		y[3][2][3][1] =1.0
+		y[3][3][3][19] =1.0
+		y[3][4][1][23] =1.0
+		y[4][0][0][1] =1.0
+		y[4][1][4][6] =1.0
+		y[4][2][2][15] =1.0
+		y[4][3][1][23] =1.0
+		y[5][0][0][2] =1.0
+		y[5][1][3][2] =1.0
+		y[5][2][3][14] =1.0
+		y[5][3][1][24] =1.0
+		y[6][0][0][0] =1.0
+		y[6][1][4][3] =1.0
+		y[6][2][2][11] =1.0
+		y[6][3][1][22] =1.0
+		y[7][0][0][4] =1.0
+		y[7][1][3][5] =1.0
+		y[7][2][3][9] =1.0
+		y[7][3][1][23] =1.0
+		y[8][0][0][4] =1.0
+		y[8][1][4][17] =1.0
+		y[8][2][1][22] =1.0
+
+
+		--z[s][n][F][DELTA]--
+   		z[0][1][4][11] =1.0
+		z[0][1][4][12] =1.0
+		z[0][1][4][13] =1.0
+		z[0][1][4][14] =1.0
+		z[0][1][4][15] =1.0
+		z[0][2][2][19] =1.0
+		z[0][2][2][20] =1.0
+		z[1][1][4][2] =1.0
+		z[1][2][2][6] =1.0
+		z[1][2][2][7] =1.0
+		z[1][2][2][8] =1.0
+		z[1][2][2][9] =1.0
+		z[1][3][4][23] =1.0
+		z[2][1][4][19] =1.0
+		z[2][1][4][20] =1.0
+		z[3][1][3][0] =1.0
+		z[3][2][3][1] =1.0
+		z[3][3][3][19] =1.0
+		z[4][1][4][6] =1.0
+		z[4][1][4][7] =1.0
+		z[4][1][4][8] =1.0
+		z[4][1][4][9] =1.0
+		z[4][1][4][10] =1.0
+		z[4][2][2][15] =1.0
+		z[4][2][2][16] =1.0
+		z[4][2][2][17] =1.0
+		z[4][2][2][18] =1.0
+		z[5][1][3][2] =1.0
+		z[5][1][3][3] =1.0
+		z[5][1][3][4] =1.0
+		z[5][2][3][14] =1.0
+		z[5][2][3][15] =1.0
+		z[5][2][3][16] =1.0
+		z[6][1][4][3] =1.0
+		z[6][1][4][4] =1.0
+		z[6][1][4][5] =1.0
+		z[6][2][2][11] =1.0
+		z[6][2][2][12] =1.0
+		z[6][2][2][13] =1.0
+		z[7][1][3][5] =1.0
+		z[7][1][3][6] =1.0
+		z[7][1][3][7] =1.0
+		z[7][1][3][8] =1.0
+		z[7][2][3][9] =1.0
+		z[7][2][3][10] =1.0
+		z[7][2][3][11] =1.0
+		z[7][2][3][12] =1.0
+		z[7][2][3][13] =1.0
+		z[8][1][4][17] =1.0
+		z[8][1][4][18] =1.0
+
+
+		--q[s][n][ks]--
+   		q[0][0][3]=1.0
+		q[0][1][1]=1.0
+		q[0][2][2]=1.0
+		q[0][3][1]=1.0
+		q[1][0][3]=1.0
+		q[1][1][1]=1.0
+		q[1][2][2]=1.0
+		q[1][3][1]=1.0
+		q[1][4][1]=1.0
+		q[2][0][3]=1.0
+		q[2][1][1]=1.0
+		q[2][2][1]=1.0
+		q[3][0][3]=1.0
+		q[3][1][3]=1.0
+		q[3][2][3]=1.0
+		q[3][3][3]=1.0
+		q[3][4][1]=1.0
+		q[4][0][3]=1.0
+		q[4][1][1]=1.0
+		q[4][2][2]=1.0
+		q[4][3][1]=1.0
+		q[5][0][3]=1.0
+		q[5][1][3]=1.0
+		q[5][2][3]=1.0
+		q[5][3][1]=1.0
+		q[6][0][3]=1.0
+		q[6][1][1]=1.0
+		q[6][2][2]=1.0
+		q[6][3][1]=1.0
+		q[7][0][3]=1.0
+		q[7][1][3]=1.0
+		q[7][2][3]=1.0
+		q[7][3][1]=1.0
+		q[8][0][3]=1.0
+		q[8][1][1]=1.0
+		q[8][2][1]=1.0
+
+
+		--h[s][n][ks]--
+   		h[1][3][1]=1.0
+		h[2][1][1]=1.0
+		h[3][0][3]=1.0
+		h[3][1][3]=1.0
+		h[3][2][3]=1.0
+		h[5][0][3]=1.0
+		h[5][1][3]=1.0
+		h[7][0][3]=1.0
+		h[7][1][3]=1.0
+		h[8][1][1]=1.0
+
+
+		--theta[s][DELTA][E]--
+   		theta[0][3][0]=1.0
+		theta[0][16][1]=1.0
+		theta[0][21][2]=1.0
+		theta[1][0][3]=1.0
+		theta[1][3][4]=1.0
+		theta[1][12][5]=1.0
+		theta[2][7][7]=1.0
+		theta[3][20][12]=1.0
+		theta[4][2][13]=1.0
+		theta[4][11][14]=1.0
+		theta[4][19][15]=1.0
+		theta[5][17][18]=1.0
+		theta[6][0][19]=1.0
+		theta[6][7][20]=1.0
+		theta[6][14][21]=1.0
+		theta[7][17][24]=1.0
+		theta[8][6][25]=1.0
+
+
+		--thetaHat[s][DELTA][E]--
+   		thetaHat[0][3][0]=1.0
+		thetaHat[0][4][0]=1.0
+		thetaHat[0][5][0]=1.0
+		thetaHat[0][16][1]=1.0
+		thetaHat[0][17][1]=1.0
+		thetaHat[0][18][1]=1.0
+		thetaHat[0][21][2]=1.0
+		thetaHat[0][22][2]=1.0
+		thetaHat[0][23][2]=1.0
+		thetaHat[1][0][3]=1.0
+		thetaHat[1][1][3]=1.0
+		thetaHat[1][3][4]=1.0
+		thetaHat[1][4][4]=1.0
+		thetaHat[1][12][5]=1.0
+		thetaHat[1][13][5]=1.0
+		thetaHat[2][7][7]=1.0
+		thetaHat[2][8][7]=1.0
+		thetaHat[2][9][7]=1.0
+		thetaHat[2][10][7]=1.0
+		thetaHat[3][20][12]=1.0
+		thetaHat[3][21][12]=1.0
+		thetaHat[3][22][12]=1.0
+		thetaHat[4][2][13]=1.0
+		thetaHat[4][3][13]=1.0
+		thetaHat[4][4][13]=1.0
+		thetaHat[4][5][13]=1.0
+		thetaHat[4][11][14]=1.0
+		thetaHat[4][12][14]=1.0
+		thetaHat[4][13][14]=1.0
+		thetaHat[4][14][14]=1.0
+		thetaHat[4][19][15]=1.0
+		thetaHat[4][20][15]=1.0
+		thetaHat[4][21][15]=1.0
+		thetaHat[4][22][15]=1.0
+		thetaHat[5][17][18]=1.0
+		thetaHat[5][18][18]=1.0
+		thetaHat[5][19][18]=1.0
+		thetaHat[5][20][18]=1.0
+		thetaHat[6][0][19]=1.0
+		thetaHat[6][1][19]=1.0
+		thetaHat[6][2][19]=1.0
+		thetaHat[6][7][20]=1.0
+		thetaHat[6][8][20]=1.0
+		thetaHat[6][9][20]=1.0
+		thetaHat[6][14][21]=1.0
+		thetaHat[6][15][21]=1.0
+		thetaHat[6][16][21]=1.0
+		thetaHat[7][17][24]=1.0
+		thetaHat[7][18][24]=1.0
+		thetaHat[7][19][24]=1.0
+		thetaHat[8][6][25]=1.0
+		thetaHat[8][7][25]=1.0
+		thetaHat[8][8][25]=1.0
+
+
+		--l[ks][ks][E]--
+   		l[0][1][0]=1.0
+		l[0][1][7]=1.0
+		l[0][1][15]=1.0
+		l[0][2][1]=1.0
+		l[1][0][1]=1.0
+		l[1][2][4]=1.0
+		l[1][2][20]=1.0
+		l[1][3][14]=1.0
+		l[2][0][0]=1.0
+		l[2][0][7]=1.0
+		l[2][0][15]=1.0
+		l[2][1][2]=1.0
+		l[2][1][5]=1.0
+		l[2][1][18]=1.0
+		l[2][1][19]=1.0
+		l[2][1][21]=1.0
+		l[3][1][3]=1.0
+		l[3][1][12]=1.0
+		l[3][1][13]=1.0
+		l[3][1][24]=1.0
+		l[3][1][25]=1.0
+		l[3][2][0]=1.0
+		l[3][2][7]=1.0
+		l[3][2][14]=1.0
+		l[3][2][18]=1.0
+		l[3][2][19]=1.0
+
+
+		--g[ks][ks][s][DELTA][E]--
+   		g[0][1][0][3][0]=1.0
+		g[0][1][0][4][0]=1.0
+		g[0][1][0][5][0]=1.0
+		g[0][1][2][7][7]=1.0
+		g[0][1][2][8][7]=1.0
+		g[0][1][2][9][7]=1.0
+		g[0][1][2][10][7]=1.0
+		g[0][1][4][19][15]=1.0
+		g[0][1][4][20][15]=1.0
+		g[0][1][4][21][15]=1.0
+		g[0][1][4][22][15]=1.0
+		g[0][2][0][16][1]=1.0
+		g[0][2][0][17][1]=1.0
+		g[0][2][0][18][1]=1.0
+		g[1][0][0][16][1]=1.0
+		g[1][0][0][17][1]=1.0
+		g[1][0][0][18][1]=1.0
+		g[1][2][1][3][4]=1.0
+		g[1][2][1][4][4]=1.0
+		g[1][2][6][7][20]=1.0
+		g[1][2][6][8][20]=1.0
+		g[1][2][6][9][20]=1.0
+		g[1][3][4][11][14]=1.0
+		g[1][3][4][12][14]=1.0
+		g[1][3][4][13][14]=1.0
+		g[1][3][4][14][14]=1.0
+		g[2][0][0][3][0]=1.0
+		g[2][0][0][4][0]=1.0
+		g[2][0][0][5][0]=1.0
+		g[2][0][2][7][7]=1.0
+		g[2][0][2][8][7]=1.0
+		g[2][0][2][9][7]=1.0
+		g[2][0][2][10][7]=1.0
+		g[2][0][4][19][15]=1.0
+		g[2][0][4][20][15]=1.0
+		g[2][0][4][21][15]=1.0
+		g[2][0][4][22][15]=1.0
+		g[2][1][0][21][2]=1.0
+		g[2][1][0][22][2]=1.0
+		g[2][1][0][23][2]=1.0
+		g[2][1][1][12][5]=1.0
+		g[2][1][1][13][5]=1.0
+		g[2][1][5][17][18]=1.0
+		g[2][1][5][18][18]=1.0
+		g[2][1][5][19][18]=1.0
+		g[2][1][5][20][18]=1.0
+		g[2][1][6][0][19]=1.0
+		g[2][1][6][1][19]=1.0
+		g[2][1][6][2][19]=1.0
+		g[2][1][6][14][21]=1.0
+		g[2][1][6][15][21]=1.0
+		g[2][1][6][16][21]=1.0
+		g[3][1][1][0][3]=1.0
+		g[3][1][1][1][3]=1.0
+		g[3][1][3][20][12]=1.0
+		g[3][1][3][21][12]=1.0
+		g[3][1][3][22][12]=1.0
+		g[3][1][4][2][13]=1.0
+		g[3][1][4][3][13]=1.0
+		g[3][1][4][4][13]=1.0
+		g[3][1][4][5][13]=1.0
+		g[3][1][7][17][24]=1.0
+		g[3][1][7][18][24]=1.0
+		g[3][1][7][19][24]=1.0
+		g[3][1][8][6][25]=1.0
+		g[3][1][8][7][25]=1.0
+		g[3][1][8][8][25]=1.0
+		g[3][2][0][3][0]=1.0
+		g[3][2][0][4][0]=1.0
+		g[3][2][0][5][0]=1.0
+		g[3][2][2][7][7]=1.0
+		g[3][2][2][8][7]=1.0
+		g[3][2][2][9][7]=1.0
+		g[3][2][2][10][7]=1.0
+		g[3][2][4][11][14]=1.0
+		g[3][2][4][12][14]=1.0
+		g[3][2][4][13][14]=1.0
+		g[3][2][4][14][14]=1.0
+		g[3][2][5][17][18]=1.0
+		g[3][2][5][18][18]=1.0
+		g[3][2][5][19][18]=1.0
+		g[3][2][5][20][18]=1.0
+		g[3][2][6][0][19]=1.0
+		g[3][2][6][1][19]=1.0
+		g[3][2][6][2][19]=1.0
+
+
+ ILP MODEL 
+	 Parameters:
+		--GRAPH--
+   0 1 2 3 
+-----------
+0| {0, 0, 1, 0, },
+
+1| {1, 0, 0, 0, },
+
+2| {0, 1, 0, 1, },
+
+3| {0, 1, 0, 0, },
+
+		--PHYSICAL LINK CAPACITY--
+   0 1 2 3 
+-----------
+0| {0, 0, 500, 0, },
+
+1| {500, 0, 0, 0, },
+
+2| {0, 500, 0, 500, },
+
+3| {0, 500, 0, 0, },
+
+		--VNF TYPES--
+0  1  2  3  4  
+-----------
+0, 1, 3, 3, 4, 
+
+		--VNF MAPPING TO PHYSICAL SERVERS--
+   0 1 2 3 
+-----------
+0| {0, 0, 0, 1, },
+
+1| {0, 1, 0, 0, },
+
+2| {0, 0, 1, 0, },
+
+3| {0, 0, 0, 1, },
+
+4| {0, 1, 0, 0, },
+
+--NUMBER OF MIDDLEBOXES REQUIRED BY EACH SERVICE--
+0  1  2  3  4  5  6  7  8  9  10  11  
+-----------
+4, 5, 3, 5, 4, 4, 4, 4, 3, 5, 3, 5, 
+
+--SERVICE FUNCTION CHAINING (TYPE OF MIDDLEBOX)--
+   0 1 2 3 4 
+-----------
+0| {0, 4, 3, 1, -1, },
+
+1| {0, 4, 3, 4, 1, },
+
+2| {0, 4, 1, -1, -1, },
+
+3| {0, 3, 3, 3, 1, },
+
+4| {0, 4, 3, 1, -1, },
+
+5| {0, 3, 3, 1, -1, },
+
+6| {0, 4, 3, 1, -1, },
+
+7| {0, 3, 3, 1, -1, },
+
+8| {0, 4, 1, -1, -1, },
+
+9| {0, 3, 3, 4, 1, },
+
+10| {0, 3, 1, -1, -1, },
+
+11| {0, 4, 3, 4, 1, },
+
+--PROCESING TIME OF MIDDLEBOXES OF EACH SERVICE--
+   0 1 2 3 4 
+-----------
+0| {0, 5, 2, 0, -1, },
+
+1| {0, 1, 4, 1, 0, },
+
+2| {0, 2, 0, -1, -1, },
+
+3| {0, 1, 1, 1, 0, },
+
+4| {0, 5, 4, 0, -1, },
+
+5| {0, 3, 3, 0, -1, },
+
+6| {0, 3, 3, 0, -1, },
+
+7| {0, 4, 5, 0, -1, },
+
+8| {0, 2, 0, -1, -1, },
+
+9| {0, 2, 1, 4, 0, },
+
+10| {0, 5, 0, -1, -1, },
+
+11| {0, 5, 5, 5, 0, },
+
+--BANDWIDTH REQUIRED BY EACH SERVICE--
+0  1  2  3  4  5  6  7  8  9  10  11  
+-----------
+368, 491, 454, 323, 372, 353, 402, 409, 438, 414, 487, 408, 
+
+--TRAFFIC SIZE OF EACH SERVICE--
+0  1  2  3  4  5  6  7  8  9  10  11  
+-----------
+844, 736, 1397, 834, 1265, 1255, 983, 872, 1161, 570, 622, 760, 
+
+--DEADLINE TIME OF EACH SERVICE--
+0  1  2  3  4  5  6  7  8  9  10  11  
+-----------
+495, 11, 312, 418, 356, 168, 83, 135, 98, 344, 235, 184, 
+
+--VIRTUAL LINKS ASSIGNMENT FOR SERVICES--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  
+-----------
+0, 0, 0, 1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 9, 9, 9, 9, 10, 10, 11, 11, 11, 11, 
+
+--ORIGIN OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  
+-----------
+0, 1, 2, 0, 1, 2, 3, 0, 1, 0, 1, 2, 3, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 0, 1, 2, 3, 0, 1, 0, 1, 2, 3, 
+
+--DESTINATION OF EACH VIRTUAL LINK--
+0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  
+-----------
+1, 2, 3, 1, 2, 3, 4, 1, 2, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 1, 2, 3, 4, 1, 2, 1, 2, 3, 4, 
+
+		ID:   0
+Physical Machine Nb:   4 
+Link Nb:    5 
+VNF type Nb:    5 
+VNF Nb:    5 
+Min link Capacity:  500 
+Max link Capacity:  500 
+Physical Machines 
+	Physical Machine id:    0 
+		 Hosted VNFs 
+	Physical Machine id:    1 
+		 Hosted VNFs 
+		Physical server Id:    1; VNF Id :    1; Type:    1; 
+		Physical server Id:    1; VNF Id :    4; Type:    4; 
+	Physical Machine id:    2 
+		 Hosted VNFs 
+		Physical server Id:    2; VNF Id :    2; Type:    3; 
+	Physical Machine id:    3 
+		 Hosted VNFs 
+		Physical server Id:    3; VNF Id :    0; Type:    0; 
+		Physical server Id:    3; VNF Id :    3; Type:    3; 
+Links 
+	Link id:    0; Capacity:  500; Bandwidth:  500; Source id:    0; Destination id:    2 Weight:    1
+	Link id:    1; Capacity:  500; Bandwidth:  500; Source id:    1; Destination id:    0 Weight:    1
+	Link id:    2; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    1 Weight:    1
+	Link id:    3; Capacity:  500; Bandwidth:  500; Source id:    2; Destination id:    3 Weight:    1
+	Link id:    4; Capacity:  500; Bandwidth:  500; Source id:    3; Destination id:    1 Weight:    1
+
+		 Services
+		Service Id:    0;
+	 Middlebox Nb:    4 
+	 Bandwidth:  368 
+	 Deadline:  495
+	 Traffic size:  844 
+	 Completion Time:   16
+	 Arrival Time: 0.000000
+	 Departure Time: 0.031621
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    0; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot    0
+			 Is Processing at time slots :
+		Service Id :    0; MiddleBox Id:    1; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot    3
+			 Is Processing at time slots :   3   4   5   6   7
+		Service Id :    0; MiddleBox Id:    2; Type:    3; Processing time:    2;Mapped to VNF id:    3;
+			 Started Processing at time slot   11
+			 Is Processing at time slots :  11  12
+		Service Id :    0; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   16
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    0; VLink Id :    0; Continious Id:    0;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   1   2
+		Service Id:    0; VLink Id :    1; Continious Id:    1;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot    8
+			 Is transmiting at time slots :   8   9  10
+		Service Id:    0; VLink Id :    2; Continious Id:    2;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   13
+			 Is transmiting at time slots :  13  14  15
+		Service Id:    1;
+	 Middlebox Nb:    5 
+	 Bandwidth:  491 
+	 Deadline:   11
+	 Traffic size:  736 
+	 Completion Time:   29
+	 Arrival Time: 0.006265
+	 Departure Time: 0.401644
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    1; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   17
+			 Is Processing at time slots :
+		Service Id :    1; MiddleBox Id:    1; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   19
+			 Is Processing at time slots :  19
+		Service Id :    1; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   22
+			 Is Processing at time slots :  22  23  24  25
+		Service Id :    1; MiddleBox Id:    3; Type:    4; Processing time:    1;Mapped to VNF id:    4;
+			 Started Processing at time slot   28
+			 Is Processing at time slots :  28
+		Service Id :    1; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   29
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    1; VLink Id :    0; Continious Id:    3;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   17
+			 Is transmiting at time slots :  17  18
+		Service Id:    1; VLink Id :    1; Continious Id:    4;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   20
+			 Is transmiting at time slots :  20  21
+		Service Id:    1; VLink Id :    2; Continious Id:    5;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   26
+			 Is transmiting at time slots :  26  27
+		Service Id:    1; VLink Id :    3; Continious Id:    6;  Source Middlebox: id    3; type    4; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:    2;
+	 Middlebox Nb:    3 
+	 Bandwidth:  454 
+	 Deadline:  312
+	 Traffic size: 1397 
+	 Completion Time:   36
+	 Arrival Time: 0.017776
+	 Departure Time: 0.214346
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    2; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   30
+			 Is Processing at time slots :
+		Service Id :    2; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot   34
+			 Is Processing at time slots :  34  35
+		Service Id :    2; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   36
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    2; VLink Id :    0; Continious Id:    7;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   30
+			 Is transmiting at time slots :  30  31  32  33
+		Service Id:    2; VLink Id :    1; Continious Id:    8;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+		Service Id:    3;
+	 Middlebox Nb:    5 
+	 Bandwidth:  323 
+	 Deadline:  418
+	 Traffic size:  834 
+	 Completion Time:   43
+	 Arrival Time: 0.070680
+	 Departure Time: 0.416391
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    3; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   37
+			 Is Processing at time slots :
+		Service Id :    3; MiddleBox Id:    1; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot   37
+			 Is Processing at time slots :  37
+		Service Id :    3; MiddleBox Id:    2; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot   38
+			 Is Processing at time slots :  38
+		Service Id :    3; MiddleBox Id:    3; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot   39
+			 Is Processing at time slots :  39
+		Service Id :    3; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   43
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    3; VLink Id :    0; Continious Id:    9;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3; VLink Id :    1; Continious Id:   10;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3; VLink Id :    2; Continious Id:   11;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    3; VLink Id :    3; Continious Id:   12;  Source Middlebox: id    3; type    3; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   40
+			 Is transmiting at time slots :  40  41  42
+		Service Id:    4;
+	 Middlebox Nb:    4 
+	 Bandwidth:  372 
+	 Deadline:  356
+	 Traffic size: 1265 
+	 Completion Time:   65
+	 Arrival Time: 0.075012
+	 Departure Time: 0.103214
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    4; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   44
+			 Is Processing at time slots :
+		Service Id :    4; MiddleBox Id:    1; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot   48
+			 Is Processing at time slots :  48  49  50  51  52
+		Service Id :    4; MiddleBox Id:    2; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   57
+			 Is Processing at time slots :  57  58  59  60
+		Service Id :    4; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   65
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    4; VLink Id :    0; Continious Id:   13;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   44
+			 Is transmiting at time slots :  44  45  46  47
+		Service Id:    4; VLink Id :    1; Continious Id:   14;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   53
+			 Is transmiting at time slots :  53  54  55  56
+		Service Id:    4; VLink Id :    2; Continious Id:   15;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   61
+			 Is transmiting at time slots :  61  62  63  64
+		Service Id:    5;
+	 Middlebox Nb:    4 
+	 Bandwidth:  353 
+	 Deadline:  168
+	 Traffic size: 1255 
+	 Completion Time:   76
+	 Arrival Time: 0.129037
+	 Departure Time: 0.466294
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    5; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   66
+			 Is Processing at time slots :
+		Service Id :    5; MiddleBox Id:    1; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   66
+			 Is Processing at time slots :  66  67  68
+		Service Id :    5; MiddleBox Id:    2; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   69
+			 Is Processing at time slots :  69  70  71
+		Service Id :    5; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   76
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    5; VLink Id :    0; Continious Id:   16;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+		Service Id:    5; VLink Id :    1; Continious Id:   17;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0   0
+		Service Id:    5; VLink Id :    2; Continious Id:   18;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   72
+			 Is transmiting at time slots :  72  73  74  75
+		Service Id:    6;
+	 Middlebox Nb:    4 
+	 Bandwidth:  402 
+	 Deadline:   83
+	 Traffic size:  983 
+	 Completion Time:   92
+	 Arrival Time: 0.139867
+	 Departure Time: 0.200954
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    6; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   77
+			 Is Processing at time slots :
+		Service Id :    6; MiddleBox Id:    1; Type:    4; Processing time:    3;Mapped to VNF id:    4;
+			 Started Processing at time slot   80
+			 Is Processing at time slots :  80  81  82
+		Service Id :    6; MiddleBox Id:    2; Type:    3; Processing time:    3;Mapped to VNF id:    3;
+			 Started Processing at time slot   86
+			 Is Processing at time slots :  86  87  88
+		Service Id :    6; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot   92
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    6; VLink Id :    0; Continious Id:   19;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   77
+			 Is transmiting at time slots :  77  78  79
+		Service Id:    6; VLink Id :    1; Continious Id:   20;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   83
+			 Is transmiting at time slots :  83  84  85
+		Service Id:    6; VLink Id :    2; Continious Id:   21;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot   89
+			 Is transmiting at time slots :  89  90  91
+		Service Id:    7;
+	 Middlebox Nb:    4 
+	 Bandwidth:  409 
+	 Deadline:  135
+	 Traffic size:  872 
+	 Completion Time:  105
+	 Arrival Time: 0.145143
+	 Departure Time: 0.199650
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    7; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot   93
+			 Is Processing at time slots :
+		Service Id :    7; MiddleBox Id:    1; Type:    3; Processing time:    4;Mapped to VNF id:    3;
+			 Started Processing at time slot   93
+			 Is Processing at time slots :  93  94  95  96
+		Service Id :    7; MiddleBox Id:    2; Type:    3; Processing time:    5;Mapped to VNF id:    3;
+			 Started Processing at time slot   97
+			 Is Processing at time slots :  97  98  99 100 101
+		Service Id :    7; MiddleBox Id:    3; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  105
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    7; VLink Id :    0; Continious Id:   22;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    7; VLink Id :    1; Continious Id:   23;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    7; VLink Id :    2; Continious Id:   24;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  102
+			 Is transmiting at time slots : 102 103 104
+		Service Id:    8;
+	 Middlebox Nb:    3 
+	 Bandwidth:  438 
+	 Deadline:   98
+	 Traffic size: 1161 
+	 Completion Time:  111
+	 Arrival Time: 0.156205
+	 Departure Time: 0.374784
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    8; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot  106
+			 Is Processing at time slots :
+		Service Id :    8; MiddleBox Id:    1; Type:    4; Processing time:    2;Mapped to VNF id:    4;
+			 Started Processing at time slot  109
+			 Is Processing at time slots : 109 110
+		Service Id :    8; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  111
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    8; VLink Id :    0; Continious Id:   25;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  106
+			 Is transmiting at time slots : 106 107 108
+		Service Id:    8; VLink Id :    1; Continious Id:   26;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0   0
+		Service Id:    9;
+	 Middlebox Nb:    5 
+	 Bandwidth:  414 
+	 Deadline:  344
+	 Traffic size:  570 
+	 Completion Time:  121
+	 Arrival Time: 0.185832
+	 Departure Time: 0.373401
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :    9; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot  112
+			 Is Processing at time slots :
+		Service Id :    9; MiddleBox Id:    1; Type:    3; Processing time:    2;Mapped to VNF id:    3;
+			 Started Processing at time slot  112
+			 Is Processing at time slots : 112 113
+		Service Id :    9; MiddleBox Id:    2; Type:    3; Processing time:    1;Mapped to VNF id:    3;
+			 Started Processing at time slot  114
+			 Is Processing at time slots : 114
+		Service Id :    9; MiddleBox Id:    3; Type:    4; Processing time:    4;Mapped to VNF id:    4;
+			 Started Processing at time slot  117
+			 Is Processing at time slots : 117 118 119 120
+		Service Id :    9; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  121
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:    9; VLink Id :    0; Continious Id:   27;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:    9; VLink Id :    1; Continious Id:   28;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:    9; VLink Id :    2; Continious Id:   29;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  115
+			 Is transmiting at time slots : 115 116
+		Service Id:    9; VLink Id :    3; Continious Id:   30;  Source Middlebox: id    3; type    4; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:   10;
+	 Middlebox Nb:    3 
+	 Bandwidth:  487 
+	 Deadline:  235
+	 Traffic size:  622 
+	 Completion Time:  129
+	 Arrival Time: 0.189028
+	 Departure Time: 0.210113
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :   10; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot  122
+			 Is Processing at time slots :
+		Service Id :   10; MiddleBox Id:    1; Type:    3; Processing time:    5;Mapped to VNF id:    3;
+			 Started Processing at time slot  122
+			 Is Processing at time slots : 122 123 124 125 126
+		Service Id :   10; MiddleBox Id:    2; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  129
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:   10; VLink Id :    0; Continious Id:   31;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    3 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+		Service Id:   10; VLink Id :    1; Continious Id:   32;  Source Middlebox: id    1; type    3; Destination Middlebox: id    2; type    1 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  127
+			 Is transmiting at time slots : 127 128
+		Service Id:   11;
+	 Middlebox Nb:    5 
+	 Bandwidth:  408 
+	 Deadline:  184
+	 Traffic size:  760 
+	 Completion Time:  151
+	 Arrival Time: 0.197328
+	 Departure Time: 0.202262
+	 Type: ARRIVAL
+	 Middleboxes:
+		Service Id :   11; MiddleBox Id:    0; Type:    0; Processing time:    0;Mapped to VNF id:    0;
+			 Started Processing at time slot  130
+			 Is Processing at time slots :
+		Service Id :   11; MiddleBox Id:    1; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot  132
+			 Is Processing at time slots : 132 133 134 135 136
+		Service Id :   11; MiddleBox Id:    2; Type:    3; Processing time:    5;Mapped to VNF id:    3;
+			 Started Processing at time slot  139
+			 Is Processing at time slots : 139 140 141 142 143
+		Service Id :   11; MiddleBox Id:    3; Type:    4; Processing time:    5;Mapped to VNF id:    4;
+			 Started Processing at time slot  146
+			 Is Processing at time slots : 146 147 148 149 150
+		Service Id :   11; MiddleBox Id:    4; Type:    1; Processing time:    0;Mapped to VNF id:    1;
+			 Started Processing at time slot  151
+			 Is Processing at time slots :
+	Virtual Links:
+		Service Id:   11; VLink Id :    0; Continious Id:   33;  Source Middlebox: id    0; type    0; Destination Middlebox: id    1; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  130
+			 Is transmiting at time slots : 130 131
+		Service Id:   11; VLink Id :    1; Continious Id:   34;  Source Middlebox: id    1; type    4; Destination Middlebox: id    2; type    3 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  137
+			 Is transmiting at time slots : 137 138
+		Service Id:   11; VLink Id :    2; Continious Id:   35;  Source Middlebox: id    2; type    3; Destination Middlebox: id    3; type    4 
+		 Routed Through the following physical links   4
+			 Started transmitting at time slot  144
+			 Is transmiting at time slots : 144 145
+		Service Id:   11; VLink Id :    3; Continious Id:   36;  Source Middlebox: id    3; type    4; Destination Middlebox: id    4; type    1 
+		 Routed Through the following physical links
+			 Started transmitting at time slot    0
+			 Is transmiting at time slots :   0   0
+	 RESULTS
+		 Objective = 35.000000
+		--y[s][n][F][DELTA]--
+   		y[0][0][0][0] =1.0
+		y[0][1][4][15] =1.0
+		y[0][2][3][24] =1.0
+		y[0][3][1][29] =1.0
+		y[1][0][0][0] =1.0
+		y[1][1][4][20] =1.0
+		y[1][2][3][26] =1.0
+		y[1][3][4][34] =1.0
+		y[1][4][1][35] =1.0
+		y[2][0][0][0] =1.0
+		y[2][1][4][26] =1.0
+		y[2][2][1][35] =1.0
+		y[3][0][0][0] =1.0
+		y[3][1][3][0] =1.0
+		y[3][2][3][7] =1.0
+		y[3][3][2][15] =1.0
+		y[3][4][1][35] =1.0
+		y[4][0][0][0] =1.0
+		y[4][1][4][10] =1.0
+		y[4][2][3][19] =1.0
+		y[4][3][1][34] =1.0
+		y[5][0][0][0] =1.0
+		y[5][1][3][10] =1.0
+		y[5][2][3][16] =1.0
+		y[5][3][1][35] =1.0
+		y[6][0][0][0] =1.0
+		y[6][1][4][7] =1.0
+		y[6][2][2][21] =1.0
+		y[6][3][1][27] =1.0
+		y[7][0][0][0] =1.0
+		y[7][1][2][5] =1.0
+		y[7][2][2][16] =1.0
+		y[7][3][1][35] =1.0
+		y[8][0][0][0] =1.0
+		y[8][1][4][32] =1.0
+		y[8][2][1][35] =1.0
+		y[9][0][0][0] =1.0
+		y[9][1][3][1] =1.0
+		y[9][2][3][3] =1.0
+		y[9][3][4][28] =1.0
+		y[9][4][1][33] =1.0
+		y[10][0][0][0] =1.0
+		y[10][1][2][25] =1.0
+		y[10][2][1][35] =1.0
+		y[11][0][0][0] =1.0
+		y[11][1][4][2] =1.0
+		y[11][2][2][10] =1.0
+		y[11][3][4][21] =1.0
+		y[11][4][1][27] =1.0
+
+
+		--z[s][n][F][DELTA]--
+   		z[0][1][4][15] =1.0
+		z[0][1][4][16] =1.0
+		z[0][1][4][17] =1.0
+		z[0][1][4][18] =1.0
+		z[0][1][4][19] =1.0
+		z[0][2][3][24] =1.0
+		z[0][2][3][25] =1.0
+		z[1][1][4][20] =1.0
+		z[1][2][3][26] =1.0
+		z[1][2][3][27] =1.0
+		z[1][2][3][28] =1.0
+		z[1][2][3][29] =1.0
+		z[1][3][4][34] =1.0
+		z[2][1][4][26] =1.0
+		z[2][1][4][27] =1.0
+		z[3][1][3][0] =1.0
+		z[3][2][3][7] =1.0
+		z[3][3][2][15] =1.0
+		z[4][1][4][10] =1.0
+		z[4][1][4][11] =1.0
+		z[4][1][4][12] =1.0
+		z[4][1][4][13] =1.0
+		z[4][1][4][14] =1.0
+		z[4][2][3][19] =1.0
+		z[4][2][3][20] =1.0
+		z[4][2][3][21] =1.0
+		z[4][2][3][22] =1.0
+		z[5][1][3][10] =1.0
+		z[5][1][3][11] =1.0
+		z[5][1][3][12] =1.0
+		z[5][2][3][16] =1.0
+		z[5][2][3][17] =1.0
+		z[5][2][3][18] =1.0
+		z[6][1][4][7] =1.0
+		z[6][1][4][8] =1.0
+		z[6][1][4][9] =1.0
+		z[6][2][2][21] =1.0
+		z[6][2][2][22] =1.0
+		z[6][2][2][23] =1.0
+		z[7][1][2][5] =1.0
+		z[7][1][2][6] =1.0
+		z[7][1][2][7] =1.0
+		z[7][1][2][8] =1.0
+		z[7][2][2][16] =1.0
+		z[7][2][2][17] =1.0
+		z[7][2][2][18] =1.0
+		z[7][2][2][19] =1.0
+		z[7][2][2][20] =1.0
+		z[8][1][4][32] =1.0
+		z[8][1][4][33] =1.0
+		z[9][1][3][1] =1.0
+		z[9][1][3][2] =1.0
+		z[9][2][3][3] =1.0
+		z[9][3][4][28] =1.0
+		z[9][3][4][29] =1.0
+		z[9][3][4][30] =1.0
+		z[9][3][4][31] =1.0
+		z[10][1][2][25] =1.0
+		z[10][1][2][26] =1.0
+		z[10][1][2][27] =1.0
+		z[10][1][2][28] =1.0
+		z[10][1][2][29] =1.0
+		z[11][1][4][2] =1.0
+		z[11][1][4][3] =1.0
+		z[11][1][4][4] =1.0
+		z[11][1][4][5] =1.0
+		z[11][1][4][6] =1.0
+		z[11][2][2][10] =1.0
+		z[11][2][2][11] =1.0
+		z[11][2][2][12] =1.0
+		z[11][2][2][13] =1.0
+		z[11][2][2][14] =1.0
+		z[11][3][4][21] =1.0
+		z[11][3][4][22] =1.0
+		z[11][3][4][23] =1.0
+		z[11][3][4][24] =1.0
+		z[11][3][4][25] =1.0
+
+
+		--q[s][n][ks]--
+   		q[0][0][3]=1.0
+		q[0][1][1]=1.0
+		q[0][2][3]=1.0
+		q[0][3][1]=1.0
+		q[1][0][3]=1.0
+		q[1][1][1]=1.0
+		q[1][2][3]=1.0
+		q[1][3][1]=1.0
+		q[1][4][1]=1.0
+		q[2][0][3]=1.0
+		q[2][1][1]=1.0
+		q[2][2][1]=1.0
+		q[3][0][3]=1.0
+		q[3][1][3]=1.0
+		q[3][2][3]=1.0
+		q[3][3][2]=1.0
+		q[3][4][1]=1.0
+		q[4][0][3]=1.0
+		q[4][1][1]=1.0
+		q[4][2][3]=1.0
+		q[4][3][1]=1.0
+		q[5][0][3]=1.0
+		q[5][1][3]=1.0
+		q[5][2][3]=1.0
+		q[5][3][1]=1.0
+		q[6][0][3]=1.0
+		q[6][1][1]=1.0
+		q[6][2][2]=1.0
+		q[6][3][1]=1.0
+		q[7][0][3]=1.0
+		q[7][1][2]=1.0
+		q[7][2][2]=1.0
+		q[7][3][1]=1.0
+		q[8][0][3]=1.0
+		q[8][1][1]=1.0
+		q[8][2][1]=1.0
+		q[9][0][3]=1.0
+		q[9][1][3]=1.0
+		q[9][2][3]=1.0
+		q[9][3][1]=1.0
+		q[9][4][1]=1.0
+		q[10][0][3]=1.0
+		q[10][1][2]=1.0
+		q[10][2][1]=1.0
+		q[11][0][3]=1.0
+		q[11][1][1]=1.0
+		q[11][2][2]=1.0
+		q[11][3][1]=1.0
+		q[11][4][1]=1.0
+
+
+		--h[s][n][ks]--
+   		h[1][3][1]=1.0
+		h[2][1][1]=1.0
+		h[3][0][3]=1.0
+		h[3][1][3]=1.0
+		h[5][0][3]=1.0
+		h[5][1][3]=1.0
+		h[7][1][2]=1.0
+		h[8][1][1]=1.0
+		h[9][0][3]=1.0
+		h[9][1][3]=1.0
+		h[9][3][1]=1.0
+		h[11][3][1]=1.0
+
+
+		--theta[s][DELTA][E]--
+   		theta[0][6][0]=1.0
+		theta[0][21][1]=1.0
+		theta[0][26][2]=1.0
+		theta[1][4][3]=1.0
+		theta[1][24][4]=1.0
+		theta[1][32][5]=1.0
+		theta[2][9][7]=1.0
+		theta[3][12][11]=1.0
+		theta[3][30][12]=1.0
+		theta[4][6][13]=1.0
+		theta[4][15][14]=1.0
+		theta[4][23][15]=1.0
+		theta[5][29][18]=1.0
+		theta[6][0][19]=1.0
+		theta[6][18][20]=1.0
+		theta[6][24][21]=1.0
+		theta[7][2][22]=1.0
+		theta[7][21][24]=1.0
+		theta[8][29][25]=1.0
+		theta[9][10][29]=1.0
+		theta[10][21][31]=1.0
+		theta[10][33][32]=1.0
+		theta[11][0][33]=1.0
+		theta[11][8][34]=1.0
+		theta[11][19][35]=1.0
+
+
+		--thetaHat[s][DELTA][E]--
+   		thetaHat[0][6][0]=1.0
+		thetaHat[0][7][0]=1.0
+		thetaHat[0][8][0]=1.0
+		thetaHat[0][21][1]=1.0
+		thetaHat[0][22][1]=1.0
+		thetaHat[0][23][1]=1.0
+		thetaHat[0][26][2]=1.0
+		thetaHat[0][27][2]=1.0
+		thetaHat[0][28][2]=1.0
+		thetaHat[1][4][3]=1.0
+		thetaHat[1][5][3]=1.0
+		thetaHat[1][24][4]=1.0
+		thetaHat[1][25][4]=1.0
+		thetaHat[1][32][5]=1.0
+		thetaHat[1][33][5]=1.0
+		thetaHat[2][9][7]=1.0
+		thetaHat[2][10][7]=1.0
+		thetaHat[2][11][7]=1.0
+		thetaHat[2][12][7]=1.0
+		thetaHat[3][12][11]=1.0
+		thetaHat[3][13][11]=1.0
+		thetaHat[3][14][11]=1.0
+		thetaHat[3][30][12]=1.0
+		thetaHat[3][31][12]=1.0
+		thetaHat[3][32][12]=1.0
+		thetaHat[4][6][13]=1.0
+		thetaHat[4][7][13]=1.0
+		thetaHat[4][8][13]=1.0
+		thetaHat[4][9][13]=1.0
+		thetaHat[4][15][14]=1.0
+		thetaHat[4][16][14]=1.0
+		thetaHat[4][17][14]=1.0
+		thetaHat[4][18][14]=1.0
+		thetaHat[4][23][15]=1.0
+		thetaHat[4][24][15]=1.0
+		thetaHat[4][25][15]=1.0
+		thetaHat[4][26][15]=1.0
+		thetaHat[5][29][18]=1.0
+		thetaHat[5][30][18]=1.0
+		thetaHat[5][31][18]=1.0
+		thetaHat[5][32][18]=1.0
+		thetaHat[6][0][19]=1.0
+		thetaHat[6][1][19]=1.0
+		thetaHat[6][2][19]=1.0
+		thetaHat[6][18][20]=1.0
+		thetaHat[6][19][20]=1.0
+		thetaHat[6][20][20]=1.0
+		thetaHat[6][24][21]=1.0
+		thetaHat[6][25][21]=1.0
+		thetaHat[6][26][21]=1.0
+		thetaHat[7][2][22]=1.0
+		thetaHat[7][3][22]=1.0
+		thetaHat[7][4][22]=1.0
+		thetaHat[7][21][24]=1.0
+		thetaHat[7][22][24]=1.0
+		thetaHat[7][23][24]=1.0
+		thetaHat[8][29][25]=1.0
+		thetaHat[8][30][25]=1.0
+		thetaHat[8][31][25]=1.0
+		thetaHat[9][10][29]=1.0
+		thetaHat[9][11][29]=1.0
+		thetaHat[10][21][31]=1.0
+		thetaHat[10][22][31]=1.0
+		thetaHat[10][33][32]=1.0
+		thetaHat[10][34][32]=1.0
+		thetaHat[11][0][33]=1.0
+		thetaHat[11][1][33]=1.0
+		thetaHat[11][8][34]=1.0
+		thetaHat[11][9][34]=1.0
+		thetaHat[11][19][35]=1.0
+		thetaHat[11][20][35]=1.0
+
+
+		--l[ks][ks][E]--
+   		l[0][1][12]=1.0
+		l[0][1][21]=1.0
+		l[0][1][24]=1.0
+		l[0][1][29]=1.0
+		l[0][1][32]=1.0
+		l[0][1][33]=1.0
+		l[0][1][35]=1.0
+		l[0][2][11]=1.0
+		l[0][2][34]=1.0
+		l[1][0][11]=1.0
+		l[1][0][34]=1.0
+		l[1][2][20]=1.0
+		l[1][3][1]=1.0
+		l[1][3][4]=1.0
+		l[1][3][14]=1.0
+		l[2][0][12]=1.0
+		l[2][0][21]=1.0
+		l[2][0][24]=1.0
+		l[2][0][29]=1.0
+		l[2][0][32]=1.0
+		l[2][0][33]=1.0
+		l[2][0][35]=1.0
+		l[2][1][11]=1.0
+		l[2][1][13]=1.0
+		l[2][1][15]=1.0
+		l[2][1][18]=1.0
+		l[3][1][0]=1.0
+		l[3][1][2]=1.0
+		l[3][1][3]=1.0
+		l[3][1][5]=1.0
+		l[3][1][7]=1.0
+		l[3][1][19]=1.0
+		l[3][1][25]=1.0
+		l[3][2][11]=1.0
+		l[3][2][13]=1.0
+		l[3][2][15]=1.0
+		l[3][2][18]=1.0
+		l[3][2][22]=1.0
+		l[3][2][29]=1.0
+		l[3][2][31]=1.0
+		l[3][2][33]=1.0
+
+
+		--g[ks][ks][s][DELTA][E]--
+   		g[0][1][3][30][12]=1.0
+		g[0][1][3][31][12]=1.0
+		g[0][1][3][32][12]=1.0
+		g[0][1][6][24][21]=1.0
+		g[0][1][6][25][21]=1.0
+		g[0][1][6][26][21]=1.0
+		g[0][1][7][21][24]=1.0
+		g[0][1][7][22][24]=1.0
+		g[0][1][7][23][24]=1.0
+		g[0][1][9][10][29]=1.0
+		g[0][1][9][11][29]=1.0
+		g[0][1][10][33][32]=1.0
+		g[0][1][10][34][32]=1.0
+		g[0][1][11][0][33]=1.0
+		g[0][1][11][1][33]=1.0
+		g[0][1][11][19][35]=1.0
+		g[0][1][11][20][35]=1.0
+		g[0][2][3][12][11]=1.0
+		g[0][2][3][13][11]=1.0
+		g[0][2][3][14][11]=1.0
+		g[0][2][11][8][34]=1.0
+		g[0][2][11][9][34]=1.0
+		g[1][0][3][12][11]=1.0
+		g[1][0][3][13][11]=1.0
+		g[1][0][3][14][11]=1.0
+		g[1][0][11][8][34]=1.0
+		g[1][0][11][9][34]=1.0
+		g[1][2][6][18][20]=1.0
+		g[1][2][6][19][20]=1.0
+		g[1][2][6][20][20]=1.0
+		g[1][3][0][21][1]=1.0
+		g[1][3][0][22][1]=1.0
+		g[1][3][0][23][1]=1.0
+		g[1][3][1][24][4]=1.0
+		g[1][3][1][25][4]=1.0
+		g[1][3][4][15][14]=1.0
+		g[1][3][4][16][14]=1.0
+		g[1][3][4][17][14]=1.0
+		g[1][3][4][18][14]=1.0
+		g[2][0][3][30][12]=1.0
+		g[2][0][3][31][12]=1.0
+		g[2][0][3][32][12]=1.0
+		g[2][0][6][24][21]=1.0
+		g[2][0][6][25][21]=1.0
+		g[2][0][6][26][21]=1.0
+		g[2][0][7][21][24]=1.0
+		g[2][0][7][22][24]=1.0
+		g[2][0][7][23][24]=1.0
+		g[2][0][9][10][29]=1.0
+		g[2][0][9][11][29]=1.0
+		g[2][0][10][33][32]=1.0
+		g[2][0][10][34][32]=1.0
+		g[2][0][11][0][33]=1.0
+		g[2][0][11][1][33]=1.0
+		g[2][0][11][19][35]=1.0
+		g[2][0][11][20][35]=1.0
+		g[2][1][3][12][11]=1.0
+		g[2][1][3][13][11]=1.0
+		g[2][1][3][14][11]=1.0
+		g[2][1][4][6][13]=1.0
+		g[2][1][4][7][13]=1.0
+		g[2][1][4][8][13]=1.0
+		g[2][1][4][9][13]=1.0
+		g[2][1][4][23][15]=1.0
+		g[2][1][4][24][15]=1.0
+		g[2][1][4][25][15]=1.0
+		g[2][1][4][26][15]=1.0
+		g[2][1][5][29][18]=1.0
+		g[2][1][5][30][18]=1.0
+		g[2][1][5][31][18]=1.0
+		g[2][1][5][32][18]=1.0
+		g[3][1][0][6][0]=1.0
+		g[3][1][0][7][0]=1.0
+		g[3][1][0][8][0]=1.0
+		g[3][1][0][26][2]=1.0
+		g[3][1][0][27][2]=1.0
+		g[3][1][0][28][2]=1.0
+		g[3][1][1][4][3]=1.0
+		g[3][1][1][5][3]=1.0
+		g[3][1][1][32][5]=1.0
+		g[3][1][1][33][5]=1.0
+		g[3][1][2][9][7]=1.0
+		g[3][1][2][10][7]=1.0
+		g[3][1][2][11][7]=1.0
+		g[3][1][2][12][7]=1.0
+		g[3][1][6][0][19]=1.0
+		g[3][1][6][1][19]=1.0
+		g[3][1][6][2][19]=1.0
+		g[3][1][8][29][25]=1.0
+		g[3][1][8][30][25]=1.0
+		g[3][1][8][31][25]=1.0
+		g[3][2][3][12][11]=1.0
+		g[3][2][3][13][11]=1.0
+		g[3][2][3][14][11]=1.0
+		g[3][2][4][6][13]=1.0
+		g[3][2][4][7][13]=1.0
+		g[3][2][4][8][13]=1.0
+		g[3][2][4][9][13]=1.0
+		g[3][2][4][23][15]=1.0
+		g[3][2][4][24][15]=1.0
+		g[3][2][4][25][15]=1.0
+		g[3][2][4][26][15]=1.0
+		g[3][2][5][29][18]=1.0
+		g[3][2][5][30][18]=1.0
+		g[3][2][5][31][18]=1.0
+		g[3][2][5][32][18]=1.0
+		g[3][2][7][2][22]=1.0
+		g[3][2][7][3][22]=1.0
+		g[3][2][7][4][22]=1.0
+		g[3][2][9][10][29]=1.0
+		g[3][2][9][11][29]=1.0
+		g[3][2][10][21][31]=1.0
+		g[3][2][10][22][31]=1.0
+		g[3][2][11][0][33]=1.0
+		g[3][2][11][1][33]=1.0
+
+
