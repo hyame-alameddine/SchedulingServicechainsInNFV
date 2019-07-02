@@ -1,0 +1,109 @@
+		In serviceDriver Deadline=min =(int)( totalps+((int)totalps/3)+s.getArrivalTime());
+		public static void genrateServices () throws Exception
+		{
+			int [] servicesNb ={5, 10, 15, 20, 25, 30};		
+			int adjustmentValue = 100;
+			
+			//needed for online only
+			int [] arrivalRates ={50};// {20,40,60,80,100};
+			int departureRate = 10;
+			
+			// services input
+			int delta = 100;
+			int minVm =3;
+			int maxVM= 5;
+			int minBw = 300;
+			int maxBw = 500;
+			int minProcessing = 1;
+			int maxProcessing =5;
+			int minTraffic = 500;
+			int maxTraffic = 1500;
+		
+			int nbOfSets = 5;
+			int [] seed ={12,15,18,21,24};//{43,64}
+			ArrayList <Network>  networkList = new ArrayList<Network>() ;
+			ArrayList<Service> services ;
+		
+			/*networkList = SerializedObjects.deserializeNetworks("testResults/offlineInputs/offlineNetwork.ser");//hh
+			Network n= networkList.get(0);
+			
+			ServicesDriver driver = null;
+			
+			for (int j=0; j<servicesNb.length; j++)
+			{
+				//offline generation
+				for (int i=0; i<nbOfSets; i++)
+				{
+					driver = new ServicesDriver (servicesNb[j],  delta, minVm, maxVM, minBw, maxBw,maxProcessing , minProcessing, minTraffic, maxTraffic,n.getPhysicalNetworkArray().get(2)[0]);
+					
+					ArrayList<int[][]> rservices = driver.generateServicesForModel(seed[i]);
+					services = driver.convertGeneratedServices(rservices);
+					SerializedObjects.serializeServices(services, "testResults/offlineInputs/offlineServices_sNb"+servicesNb[j]+"_set"+i+"_seed"+seed[i]+".ser");
+				}
+				
+			}
+		*/
+			int sNb = 25;
+			networkList = SerializedObjects.deserializeNetworks("testResults/onlineBatchInputs/OnlineBatchNetwork.ser");//hh
+			Network  n= networkList.get(0);
+			ServicesDriver driver = null;
+			//online generation
+			for (int i=0; i<nbOfSets; i++)
+			{
+				for(int j=0;j<arrivalRates.length;j++)
+				{
+					driver = new ServicesDriver (sNb,  delta, minVm, maxVM, minBw, maxBw,maxProcessing , minProcessing, minTraffic, maxTraffic,n.getPhysicalNetworkArray().get(2)[0]);
+					services = driver.generateServices(arrivalRates[j], departureRate,adjustmentValue,seed[i]);
+					SerializedObjects.serializeServices(services, "testResults/onlineBatchInputs/onlineBatchServices_Arr"+arrivalRates[j]+"_set"+i+"_seed"+seed[i]+".ser");
+				}
+			}
+		
+			
+			
+		
+		
+		}
+		
+		
+		public static void genrateNetworks()
+		{
+			int []VNFType = {5,5};//let it be the the min of the VNFNb so when we increase the Nb we increase the VNFs of the same type
+			int [] pmNb = {4,8};
+			int []linkNb = {5, 10};
+			int linkWeight = 1;
+			int pmNoVNF = 0;	
+			
+			//testing over network of different VNF nb and links capacity
+			int [] VNFNb = {7, 15};//{5,10,15,20};//15
+			int [] linksCapacity = {1000,3000};	
+			//int VNFVaryLink = 8;
+			//int linkVaryVNF = 3000;//2000
+			Network n;
+			ArrayList <Network>  networkList = new ArrayList<Network>() ;
+			String [] fileName = {"testResults/offlineInputs/offlineNetwork.ser", "testResults/onlineBatchInputs/OnlineBatchNetwork.ser"};
+			
+			//creating networks of different VNFNB 
+			for (int i=1; i<VNFNb.length; i++)
+			{
+				n=new Network(VNFNb[i],VNFType[i],pmNb[i],linkNb[i],linksCapacity[i],linksCapacity[i],linkWeight,pmNoVNF);
+				n.buildPhysicalNetwork();
+				networkList.add(n);
+				
+				SerializedObjects.serializeNetworks(networkList, fileName[i]);
+				networkList = new ArrayList<Network>() ;
+			}			
+
+			//SerializedObjects.serializeNetworks(networkList, "testResults/onlineBatchInputs/OnlineBatchNetwork.ser");
+		
+			//vary link capacity
+			/*for (int i=0; i<linksCapacity.length; i++)
+			{
+				n=new Network(VNFVaryLink,VNFType,pmNb,linkNb,linksCapacity[i],linksCapacity[i],linkWeight,pmNoVNF);
+				n.buildPhysicalNetwork();
+				networkList.add(n);
+			}
+			
+			//serialize network
+			SerializedObjects.serializeNetworks(networkList, "testResults/onlineNetworkLinks.ser");*/
+	
+		}
